@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Hadir App</string>
+    <string name="app_name">HADIR</string>
+    <string name="hint_password">Password</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="text_login">"LOGIN"</string>
+    <string name="text_forgot_password">"Forgot your Password?"</string>
+    <string name="text_register_an_account">"Register an account"</string>
+    <string name="hello_there">"Hello There!"</string>
+    <string name="text_sub_login">"An attendance Project with RFID"</string>
+    <string name="tips_register">"If you don't have account to Login"</string>
+    <string name="text_already_have_an_account">"Already have an Account"</string>
+    <string name="create_an_account">"Create an account"</string>
+    <string name="text_login_here">"Login Here"</string>
+    <string name="text_register">"REGISTER"</string>
 </resources>
