@@ -12,7 +12,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.hadir.hadirapp.LoginActivity">
 
-
     <ImageView
         android:id="@+id/logo_splash"
         android:layout_width="@dimen/dimens_196dp"
@@ -31,9 +30,9 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/hello_there"
-        android:textStyle="bold"
         android:textColor="@color/mainWhite"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,47 +45,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-
     <EditText
-        android:id="@+id/username"
         android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:textSize="15sp"
-        android:backgroundTint="@color/colorBluePrimary"
-        android:hint="@string/prompt_username"
-        android:textColorHint="@color/mainWhite"
         android:textColor="@color/mainWhite"
-        android:fontFamily="@font/avenir_medium"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
+        android:textColorHint="@color/mainWhite"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBluePrimary"
+            android:fontFamily="@font/avenir_medium"
+            android:hint="@string/prompt_username"
+            android:inputType="textEmailAddress"
+            android:selectAllOnFocus="true"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:textSize="15sp"
-        android:backgroundTint="@color/colorBluePrimary"
-        android:hint="@string/prompt_password"
-        android:textColorHint="@color/mainWhite"
         android:textColor="@color/mainWhite"
-        android:fontFamily="@font/avenir_medium"
-        android:imeActionLabel="@string/action_sign_in_short"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
+        android:textColorHint="@color/mainWhite"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintTop_toBottomOf="@+id/username">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBluePrimary"
+            android:fontFamily="@font/avenir_medium"
+            android:hint="@string/prompt_password"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:selectAllOnFocus="true"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login"
@@ -102,11 +115,11 @@
         android:id="@+id/register_here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_24dp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/text_register_an_account"
         android:textColor="@color/colorBluePrimary"
         android:textSize="@dimen/size_12sp"
-        android:layout_marginTop="@dimen/dimens_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -124,7 +137,6 @@
         app:layout_constraintBottom_toTopOf="@+id/register_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <TextView
         android:id="@+id/textView"
