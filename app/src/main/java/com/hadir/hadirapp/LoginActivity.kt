@@ -4,14 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.hadir.hadirapp.ui.base.BaseActivity
+import com.hadir.hadirapp.ui.login.LoginFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        register_here.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
-        loginButton.setOnClickListener { startActivity(Intent(this, StatisticsActivity::class.java)) }
+
+        addFragment(LoginFragment())
     }
 }
