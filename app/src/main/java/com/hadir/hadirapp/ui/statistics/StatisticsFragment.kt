@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.R
+import com.hadir.hadirapp.model.DailyDataModel
 import com.hadir.hadirapp.model.TeacherModel
 
 class StatisticsFragment : Fragment() {
@@ -29,6 +30,9 @@ class StatisticsFragment : Fragment() {
         Log.d("TEACHER_LIST", "onActivityCreated: activity created.")
         vm.getTeachersData().observe(this, Observer<ArrayList<TeacherModel>> {
             Log.d("TEACHER_LIST", "onActivityCreated: $it")
+        })
+        vm.getDailyData(this).observe(this, Observer<ArrayList<DailyDataModel>> {
+            Log.d("TEACHER_LIST_DAILY", "onActivityCreated: $it")
         })
     }
 }

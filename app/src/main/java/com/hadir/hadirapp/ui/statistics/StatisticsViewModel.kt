@@ -3,6 +3,7 @@ package com.hadir.hadirapp.ui.statistics
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LifecycleOwner
 import com.hadir.hadirapp.utils.TeacherRepository
 
 class StatisticsViewModel(application: Application) : AndroidViewModel(application) {
@@ -14,4 +15,5 @@ class StatisticsViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun getTeachersData() = repo.getTeachersData()
+    fun getDailyData(owner: LifecycleOwner) = repo.getDailyData(owner)
 }
