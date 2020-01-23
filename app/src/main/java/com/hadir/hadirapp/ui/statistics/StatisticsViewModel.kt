@@ -3,16 +3,15 @@ package com.hadir.hadirapp.ui.statistics
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import com.google.firebase.database.FirebaseDatabase
-import com.hadir.hadirapp.model.TeacherModel
+import com.hadir.hadirapp.utils.TeacherRepository
 
 class StatisticsViewModel(application: Application) : AndroidViewModel(application) {
-    val context by lazy {
+    private val context by lazy {
         getApplication() as Context
     }
-
-    fun getTeachersData() {
-        val database = FirebaseDatabase.getInstance().reference
-        val teachersList = ArrayList<TeacherModel>()
+    private val repo by lazy {
+        TeacherRepository.newInstance()
     }
+
+    fun getTeachersData() = repo.getTeachersData()
 }
