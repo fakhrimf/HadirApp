@@ -20,4 +20,14 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="Button.PrimaryWhiteRounded" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/mainWhite</item>
+        <item name="android:textSize">@dimen/size_18sp</item>
+        <item name="android:fontFamily">@font/avenir_black</item>
+        <item name="android:background">@drawable/btn_white_primary_rounded_bg</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
 </resources>

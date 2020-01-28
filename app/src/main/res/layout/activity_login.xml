@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hadir.hadirapp.LoginActivity">
+    tools:context="com.hadir.hadirapp.login.LoginActivity">
 
     <ImageView
         android:id="@+id/logo_splash"
@@ -45,9 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
@@ -69,7 +66,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorBluePrimary"
             android:fontFamily="@font/avenir_medium"
-            android:hint="@string/prompt_username"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             android:textColor="@color/mainWhite"
@@ -113,6 +110,19 @@
         app:layout_constraintTop_toBottomOf="@+id/username"
         tools:layout_editor_absoluteX="16dp" />
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/login_with_google"
+        style="@style/Button.PrimaryWhiteRounded"
+        android:drawableStart="@drawable/icons8_google_36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_with_google"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.113"
+        tools:layout_editor_absoluteX="16dp" />
+
     <TextView
         android:id="@+id/register_here"
         android:layout_width="wrap_content"
@@ -151,7 +161,7 @@
         android:textSize="@dimen/size_12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/login_with_google"
         app:layout_constraintVertical_bias="0.17" />
 
     <ProgressBar

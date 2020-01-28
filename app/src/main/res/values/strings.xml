@@ -20,4 +20,6 @@
     <string name="create_an_account">"Create an account"</string>
     <string name="text_login_here">"Login Here"</string>
     <string name="text_register">"REGISTER"</string>
+    <string name="login_with_google">Login With Google</string>
+    <string name="email">Email</string>
 </resources>

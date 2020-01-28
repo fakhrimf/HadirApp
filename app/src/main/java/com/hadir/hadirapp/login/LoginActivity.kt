@@ -12,8 +12,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.hadir.hadirapp.MainActivity
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.RegisterActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -31,8 +34,9 @@ companion object {
             R.id.register_here
         )
         TextView.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
-
-
+        firebaseAuth = FirebaseAuth.getInstance()
+        configureGoogleSignIn()
+        setUp()
 
     }
     private  fun configureGoogleSignIn(){
@@ -52,6 +56,34 @@ companion object {
         )
     }
 
+    private  fun setUp(){
+        login_with_google.setOnClickListener {
+            signIn()
+        }
+    }
+
+    private  fun firebaseAuthWithGoogle(acct:GoogleSignInAccount){
+        val credential = GoogleAuthProvider.getCredential(acct.idToken,null)
+
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
+            if (it.isSuccessful){
+                startActivity(MainActivity.getLaunchIntent(this))
+            }else{
+                Toast.makeText(this,"Google Sign In Failed",Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val  user = FirebaseAuth.getInstance().currentUser
+        if(user != null){
+            startActivity(MainActivity.getLaunchIntent(this))
+            finish()
+        }
+
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == RC_SIGN_IN){
@@ -60,6 +92,7 @@ companion object {
 
             try{
                 val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account!!)
 
             }catch (e:ApiException){
                 e.printStackTrace()
