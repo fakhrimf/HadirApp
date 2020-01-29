@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.hadir.hadirapp.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
-        <activity android:name=".RegisterActivity"></activity>
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Home"></activity>
         <activity
-            android:name="com.hadir.hadirapp.SplashscreenActivity"
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".SplashscreenActivity"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -23,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.hadir.hadirapp.MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

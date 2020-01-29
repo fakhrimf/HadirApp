@@ -20,4 +20,24 @@
     <string name="create_an_account">"Create an account"</string>
     <string name="text_login_here">"Login Here"</string>
     <string name="text_register">"REGISTER"</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="arrive">Jam Datang</string>
+    <string name="go_home">Jam Pulang</string>
+    <string name="default_time">--:--:--</string>
+    <string name="default_arrive_time">--:--:--</string>
+    <string name="default_go_home_time">--:--:--</string>
+    <string name="default_name">Name</string>
 </resources>
