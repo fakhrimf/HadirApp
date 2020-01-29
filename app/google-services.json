@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "34103323344",
+    "firebase_url": "https://kumascanner.firebaseio.com",
+    "project_id": "kumascanner",
+    "storage_bucket": "kumascanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34103323344:android:e829ed749938954ee94cd5",
+        "android_client_info": {
+          "package_name": "com.hadir.hadirapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34103323344-0rpgqaonkobjgdmhi5trvl6do7f5ctsa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hadir.hadirapp",
+            "certificate_hash": "884a509da42adfb117376fd963cfcaf8295272cc"
+          }
+        },
+        {
+          "client_id": "34103323344-khth8jt55urkqifjobv9iuce5jjoukq7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hadir.hadirapp",
+            "certificate_hash": "5e434b64d0abc66017598d57e9c88882bc558bbc"
+          }
+        },
+        {
+          "client_id": "34103323344-nbqn223n00761259uvs84ua0qhbv9i8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQa2WAVaUxupDM62Z5PcJikQ_y4NXaFNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34103323344-nbqn223n00761259uvs84ua0qhbv9i8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
