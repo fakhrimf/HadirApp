@@ -35,10 +35,6 @@ companion object {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        TextView = findViewById(
-            R.id.register_here
-        )
-        TextView.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
         firebaseAuth = FirebaseAuth.getInstance()
         configureGoogleSignIn()
         setUp()
@@ -87,7 +83,6 @@ companion object {
             }
         }
     }
-
     //get firebase instance to send it to db
     override fun onStart() {
         super.onStart()
@@ -109,7 +104,7 @@ companion object {
                     val user = firebaseAuth.currentUser
                     val uId = user!!.uid
 
-                    if(user.email == email) {
+                    if(user.email == email ) {
                         mDatabase.child(uId).child("email").setValue(email)
                         startActivity(Intent(this, MainActivity::class.java))
                         Toast.makeText(this, "Login Success",Toast.LENGTH_SHORT).show()
