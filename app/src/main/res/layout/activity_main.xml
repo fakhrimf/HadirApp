@@ -12,12 +12,23 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"
+            android:text="Logout"
+            />
+
         <ImageView
             android:id="@+id/logo_splash"
             android:layout_width="@dimen/dimens_196dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/splash" />
+
+
     </LinearLayout>
 
 </RelativeLayout>

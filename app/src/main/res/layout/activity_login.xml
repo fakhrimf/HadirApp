@@ -75,7 +75,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -88,6 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorBluePrimary"
@@ -107,13 +107,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_login"
+        android:foreground="?android:selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username"
         tools:layout_editor_absoluteX="16dp" />
 
     <com.google.android.gms.common.SignInButton
+        android:layout_marginTop="18dp"
         android:id="@+id/login_with_google"
-        style="@style/Button.PrimaryWhiteRounded"
         android:drawableStart="@drawable/icons8_google_36"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
