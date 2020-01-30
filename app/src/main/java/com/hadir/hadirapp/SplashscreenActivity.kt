@@ -3,8 +3,7 @@ package com.hadir.hadirapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.hadir.hadirapp.login.LoginActivity
+import com.hadir.hadirapp.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splashscreen.*
 import java.util.*
 

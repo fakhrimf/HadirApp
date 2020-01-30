@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import com.hadir.hadirapp.login.LoginActivity
+import com.hadir.hadirapp.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 
