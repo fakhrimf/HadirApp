@@ -30,4 +30,5 @@
     <string name="kehadiran_izin_angka">5</string>
     <string name="kehadiran_sakit">Sakit</string>
     <string name="kehadiran_sakit_angka">2</string>
+    <string name="dot">dot</string>
 </resources>

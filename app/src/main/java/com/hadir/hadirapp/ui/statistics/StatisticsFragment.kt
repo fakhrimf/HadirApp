@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.DailyDataModel
 import com.hadir.hadirapp.model.TeacherModel
+import org.joda.time.LocalDate
+import java.util.*
 
 class StatisticsFragment : Fragment() {
     private val vm by lazy {
@@ -28,11 +30,12 @@ class StatisticsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.d("TEACHER_LIST", "onActivityCreated: activity created.")
-        vm.getTeachersData().observe(this, Observer<ArrayList<TeacherModel>> {
+        vm.getTeachersData().observe(viewLifecycleOwner, Observer<ArrayList<TeacherModel>> {
             Log.d("TEACHER_LIST", "onActivityCreated: $it")
         })
-        vm.getDailyData(this).observe(this, Observer<ArrayList<DailyDataModel>> {
+        vm.getDailyData(viewLifecycleOwner, Date()).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
             Log.d("TEACHER_LIST_DAILY", "onActivityCreated: $it")
         })
+        vm.getPresentDataPerYear(viewLifecycleOwner, LocalDate(Date()))
     }
 }

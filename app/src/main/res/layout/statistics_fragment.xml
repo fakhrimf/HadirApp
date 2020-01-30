@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
@@ -11,14 +9,14 @@
         android:id="@+id/text_statistic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_statistic"
-        android:textColor="#ffff"
-        android:textSize="30dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_medium"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/text_statistic"
+        android:textColor="#ffff"
+        android:textSize="@dimen/size_30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
@@ -42,10 +40,10 @@
             android:id="@+id/image_tips"
             android:layout_width="270dp"
             android:layout_height="@dimen/dimens_160dp"
-            app:cardCornerRadius="20dp"
+            android:layout_marginStart="-20dp"
             android:layout_marginTop="85dp"
-            android:layout_marginLeft="-20dp"
-            app:cardBackgroundColor="@color/cardview_dark_background"
+            app:cardBackgroundColor="#FF424242"
+            app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
@@ -53,99 +51,96 @@
                 android:id="@+id/icon_kehadiran"
                 android:layout_width="11dp"
                 android:layout_height="11dp"
-                android:src="@drawable/dot"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="38dp"/>
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="38dp"
+                android:contentDescription="@string/dot"
+                android:src="@drawable/dot" />
 
             <TextView
                 android:id="@+id/text_kehadiran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_statistic"
                 android:textColor="#5AB84A"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="60dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
+                android:textSize="@dimen/size_16sp" />
 
             <TextView
                 android:id="@+id/angka_kehadiran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_statistic_angka"
                 android:textColor="#5AB84A"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="190dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
-
+                android:textSize="@dimen/size_16sp" />
 
 
             <ImageView
                 android:id="@+id/icon_izin"
                 android:layout_width="11dp"
                 android:layout_height="11dp"
-                android:src="@drawable/dot2"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="68dp"/>
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="68dp"
+                android:contentDescription="@string/dot"
+                android:src="@drawable/dot2" />
 
             <TextView
                 android:id="@+id/text_izin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_izin"
                 android:textColor="#4F9343"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="60dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
+                android:textSize="@dimen/size_16sp" />
 
             <TextView
                 android:id="@+id/angka_izin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_izin_angka"
                 android:textColor="#5AB84A"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="190dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
-
-
+                android:textSize="@dimen/size_16sp" />
 
 
             <ImageView
                 android:id="@+id/icon_sakit"
                 android:layout_width="11dp"
                 android:layout_height="11dp"
-                android:src="@drawable/dot3"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="98dp"/>
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="98dp"
+                android:contentDescription="@string/dot"
+                android:src="@drawable/dot3" />
 
             <TextView
                 android:id="@+id/text_sakit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_sakit"
                 android:textColor="#436D3C"
-                android:layout_marginTop="90dp"
-                android:layout_marginLeft="60dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
+                android:textSize="@dimen/size_16sp" />
 
             <TextView
                 android:id="@+id/angka_sakit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/kehadiran_sakit_angka"
                 android:textColor="#5AB84A"
-                android:layout_marginTop="90dp"
-                android:layout_marginLeft="190dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/size_16sp"/>
-
-
-
+                android:textSize="@dimen/size_16sp" />
 
         </androidx.cardview.widget.CardView>
 
