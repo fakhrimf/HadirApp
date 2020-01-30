@@ -12,6 +12,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.TeacherModel
 
@@ -26,6 +27,10 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context by lazy{
         getApplication() as Context
+    }
+
+
+    private val mDatabase by lazy{
     }
 
     private val googleSignInOptions: GoogleSignInOptions by lazy {
