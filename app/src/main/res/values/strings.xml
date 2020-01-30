@@ -31,4 +31,7 @@
     <string name="kehadiran_sakit">Sakit</string>
     <string name="kehadiran_sakit_angka">2</string>
     <string name="dot">dot</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

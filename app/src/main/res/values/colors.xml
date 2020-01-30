@@ -3,12 +3,17 @@
     <color name="mainWhite">#FFFFFF</color>
     <color name="colorPrimary">#202020</color>
     <color name="colorPrimaryDark">#474747</color>
+    <color name="fontLightGray">#838383</color>
     <color name="colorAccent">#5563E9</color>
     <color name="colorBluePrimary">#5563E9</color>
     <color name="mainBlack">#474747</color>
     <color name="blue_light">#7ACDFF</color>
     <color name="mainDark">#202020</color>
     <color name="mainGray">#E91F1F1F</color>
+
+    <color name="progressBarGreen">#5AB84A</color>
+    <color name="fontGreenMed">#4F9343</color>
+    <color name="fontGreenDark">#436D3C</color>
 
     <color name="home">#5B37B7</color>
     <color name="like">#C9379D</color>
