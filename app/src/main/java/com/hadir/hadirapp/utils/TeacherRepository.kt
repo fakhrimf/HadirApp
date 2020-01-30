@@ -200,7 +200,7 @@ class TeacherRepository {
         val list = ArrayList<DailyDataModel>()
         while (startMonth.isBefore(endMonth)) {
             val dateMilli = Date.from(Instant.ofEpochMilli(startMonth.toDateTimeAtStartOfDay().toInstant().millis))
-            getDailyData(owner, dateMilli, "216886241240227144").observe(owner, androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
+            getDailyData(owner, dateMilli, key).observe(owner, androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
                 for (i in it) {
                     list.add(i)
                     Log.d("####", "getPresentDataPerMonthByKey: ADDED $i")
