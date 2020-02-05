@@ -3,9 +3,9 @@ package com.hadir.hadirapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hadir.hadirapp.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splashscreen.*
 import java.util.*
-import kotlin.concurrent.timer
 
 class SplashscreenActivity : AppCompatActivity() {
     val timerTask = object : TimerTask(){

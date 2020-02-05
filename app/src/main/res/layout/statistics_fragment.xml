@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //CircularProgressbar tinggal di set
+    <!--CircularProgressbar tinggal di set-->
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         app:cpb_progress_max="100"

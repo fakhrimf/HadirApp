@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hadir.hadirapp">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +11,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".StatisticsActivity"></activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Home"></activity>
+        <activity
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".RegisterActivity" />
         <activity
@@ -26,5 +30,4 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
-
 </manifest>
