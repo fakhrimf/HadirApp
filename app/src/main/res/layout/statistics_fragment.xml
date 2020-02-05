@@ -1,20 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/statistics"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.statistics.StatisticsFragment">
+    android:background="@drawable/gradient_background">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/text_statistic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StatisticsFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/text_statistic"
+        android:textColor="#ffff"
+        android:textSize="@dimen/size_30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--CircularProgressbar tinggal di set-->
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        app:cpb_progress_max="100"
+        android:id="@+id/circularProgress"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:cpb_background_progressbar_color="@color/progressBarGreen"
+        app:cpb_background_progressbar_width="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_statistic"
+        android:layout_marginTop="@dimen/_16sdp"/>
+
+    <TextView
+        android:id="@+id/tvPersentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textSize="@dimen/_24sdp"
+        android:textColor="#5AB84A"
+        android:fontFamily="@font/avenir_medium"
+        app:layout_constraintTop_toTopOf="@id/circularProgress"
+        app:layout_constraintLeft_toLeftOf="@id/circularProgress"
+        app:layout_constraintRight_toRightOf="@id/circularProgress"
+        app:layout_constraintBottom_toBottomOf="@id/circularProgress"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circularProgress">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_tips"
+            android:layout_width="270dp"
+            android:layout_height="@dimen/dimens_160dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginTop="85dp"
+            app:cardBackgroundColor="#FF424242"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circularProgress">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/icon_kehadiran"
+                        android:layout_width="11dp"
+                        android:layout_height="11dp"
+                        android:src="@drawable/dot"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                    <TextView
+                        android:id="@+id/text_kehadiran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_statistic"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_toRightOf="@id/icon_kehadiran"/>
+
+                    <TextView
+                        android:id="@+id/angka_kehadiran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_statistic_angka"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/icon_izin"
+                        android:layout_width="11dp"
+                        android:layout_height="11dp"
+                        android:src="@drawable/dot2"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                    <TextView
+                        android:id="@+id/text_izin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_izin"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_toRightOf="@id/icon_izin"/>
+
+                    <TextView
+                        android:id="@+id/angka_izin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_izin_angka"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/icon_sakit"
+                        android:layout_width="11dp"
+                        android:layout_height="11dp"
+                        android:src="@drawable/dot3"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"/>
+
+                    <TextView
+                        android:id="@+id/text_sakit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_sakit"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_toRightOf="@id/icon_sakit"/>
+
+                    <TextView
+                        android:id="@+id/angka_sakit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kehadiran_sakit_angka"
+                        android:textColor="@color/progressBarGreen"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/size_16sp"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

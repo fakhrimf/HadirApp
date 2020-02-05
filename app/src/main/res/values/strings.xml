@@ -20,6 +20,20 @@
     <string name="create_an_account">"Create an account"</string>
     <string name="text_login_here">"Login Here"</string>
     <string name="text_register">"REGISTER"</string>
+    <string name="text_statistic">Statistics</string>
+    <string name="text_team">Team</string>
+    <string name="name_about_us">Fakhri Maulana Falah</string>
+    <string name="email_about_us">fakhrimf@gmail.com</string>
+    <string name="kehadiran_statistic">Kehadiran</string>
+    <string name="kehadiran_statistic_angka">80</string>
+    <string name="kehadiran_izin">Izin</string>
+    <string name="kehadiran_izin_angka">5</string>
+    <string name="kehadiran_sakit">Sakit</string>
+    <string name="kehadiran_sakit_angka">2</string>
+    <string name="dot">dot</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
