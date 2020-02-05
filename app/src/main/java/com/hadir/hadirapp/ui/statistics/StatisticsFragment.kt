@@ -10,14 +10,21 @@ import com.hadir.hadirapp.R
 
 class StatisticsFragment : Fragment() {
     val vm by lazy {
-        ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(StatisticsViewModel::class.java)
+        ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
+        ).get(StatisticsViewModel::class.java)
     }
 
     companion object {
         fun newInstance() = StatisticsFragment()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.statistics_fragment, container, false)
     }
 

@@ -1,23 +1,26 @@
 package com.hadir.hadirapp
 
-import android.graphics.drawable.Drawable
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import com.hadir.hadirapp.R.drawable.ic_menu_gallery
 import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
-import com.mikepenz.materialdrawer.model.DividerDrawerItem
-import com.mikepenz.materialdrawer.model.MiniDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
+    companion object {
+        fun getLaunchIntent(from: Context) = Intent(from, HomeActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        }
+    }
+
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -44,15 +47,14 @@ class HomeActivity : AppCompatActivity() {
         slider.itemAdapter.add(
             item1,
             item2
-         )
+        )
         toolbar.setNavigationOnClickListener {
             slider.drawerLayout?.openDrawer(slider)
         }
-        slider.onDrawerItemClickListener={_, item, position ->
+        slider.onDrawerItemClickListener = { _, item, position ->
             println("Item Clicked $item $position ")
             false
         }
-
 
 
 //         Gada FindViewById, kecuali buat menu item

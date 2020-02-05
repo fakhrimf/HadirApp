@@ -1,18 +1,18 @@
 package com.hadir.hadirapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hadir.hadirapp.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splashscreen.*
 import java.util.*
 
 class SplashscreenActivity : AppCompatActivity() {
-    val timerTask = object : TimerTask(){
+    val timerTask = object : TimerTask() {
         override fun run() {
             if (progressbar.progress < 100)
                 progressbar.progress += 1
-            else{
+            else {
                 timer?.cancel()
                 val intent = Intent(baseContext, LoginActivity::class.java)
                 startActivity(intent)

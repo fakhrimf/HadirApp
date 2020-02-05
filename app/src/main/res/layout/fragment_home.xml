@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_container"
@@ -58,19 +58,19 @@
                     android:text="@string/arrive"
                     android:textColor="@color/textGray"
                     android:textSize="@dimen/size_12sp"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
                 <TextView
                     android:id="@+id/tv_arrive_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimens_16dp"
                     android:text="@string/default_arrive_time"
                     android:textColor="@color/greenAccent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_arrive"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginHorizontal="@dimen/dimens_16dp"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tv_arrive" />
+
                 <TextView
                     android:id="@+id/tv_go_home"
                     android:layout_width="wrap_content"
@@ -78,19 +78,18 @@
                     android:text="@string/go_home"
                     android:textColor="@color/textGray"
                     android:textSize="@dimen/size_12sp"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
                     app:layout_constraintEnd_toEndOf="parent"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
                 <TextView
                     android:id="@+id/tv_go_home_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimens_16dp"
                     android:text="@string/default_go_home_time"
                     android:textColor="@color/greenAccent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_go_home"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginHorizontal="@dimen/dimens_16dp"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tv_go_home" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

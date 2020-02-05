@@ -1,7 +1,7 @@
 package com.hadir.hadirapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
 
 class StatisticsActivity : AppCompatActivity() {
