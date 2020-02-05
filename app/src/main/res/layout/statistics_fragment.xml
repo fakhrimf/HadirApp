@@ -25,7 +25,7 @@
         android:id="@+id/circularProgress"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
-        app:cpb_background_progressbar_color="@color/progressBarGreen"
+        app:cpb_progressbar_color="@color/progressBarGreen"
         app:cpb_background_progressbar_width="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
