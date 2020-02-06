@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "34103323344-7qt7l95ljr3amsh6affthjf82m9m8qqd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hadir.hadirapp",
+            "certificate_hash": "622942dfb827832922d579eb07f673360cd8cb1b"
+          }
+        },
+        {
+          "client_id": "34103323344-2c4te4c4p056m95rdvhf0e0r4k7jpvlh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hadir.hadirapp",
+            "certificate_hash": "d92a0ec4a604eb8d39d2cd20051818e3a2d7938a"
+          }
+        },
+        {
           "client_id": "34103323344-0rpgqaonkobjgdmhi5trvl6do7f5ctsa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
