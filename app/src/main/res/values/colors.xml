@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="mainWhite">#FFFFFF</color>
-    <color name="colorPrimary">#9C27B0</color>
-    <color name="colorPrimaryDark">#9C27B0</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#202020</color>
+    <color name="colorPrimaryDark">#474747</color>
+    <color name="fontLightGray">#838383</color>
+    <color name="colorAccent">#5563E9</color>
     <color name="colorBluePrimary">#5563E9</color>
     <color name="mainBlack">#474747</color>
     <color name="blue_light">#7ACDFF</color>
+    <color name="backgroundDark">#2C2F33</color>
+    <color name="cardDark">#202225</color>
     <color name="mainDark">#202020</color>
     <color name="mainGray">#E91F1F1F</color>
+    <color name="textGray">#8E9297</color>
+    <color name="greenAccent">#60DD41</color>
+
+    <color name="progressBarGreen">#5AB84A</color>
+    <color name="fontGreenMed">#4F9343</color>
+    <color name="fontGreenDark">#436D3C</color>
 
     <color name="home">#5B37B7</color>
     <color name="like">#C9379D</color>
