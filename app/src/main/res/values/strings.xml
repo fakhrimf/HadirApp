@@ -31,6 +31,21 @@
     <string name="kehadiran_sakit">Sakit</string>
     <string name="kehadiran_sakit_angka">2</string>
     <string name="dot">dot</string>
+    <string name="nip_guru">NIP</string>
+    <string name="detail_nip_guru">171811710014</string>
+    <string name="name_guru">John Doe</string>
+    <string name="aktif_guru">AKTIF</string>
+    <string name="hadir_guru">Hadir</string>
+    <string name="information_detail_teacher">Information Detail Teacher</string>
+    <string name="alamat_guru">Jl. Kliningan No. 6</string>
+    <string name="no_guru">Nomor HP</string>
+    <string name="detail_no_guru">081234182911</string>
+    <string name="email_guru">Email</string>
+    <string name="detail_email_guru">fakhri2020@gmail.com</string>
+    <string name="alamat">Alamat</string>
+    <string name="persentage_statistic">100%</string>
+    <string name="data_statistic">Data Statistic</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -55,4 +70,6 @@
     <string name="default_name">Name</string>
     <string name="login_with_google">Login With Google</string>
     <string name="email">Email</string>
+    <string name="other">Other</string>
+    <string name="logo_hadir">Logo Hadir</string>
 </resources>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_guru"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fakhri"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/name_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintStart_toStartOf="@id/cons_img"
+            app:layout_constraintTop_toBottomOf="@id/img_guru" />
+
+        <TextView
+            android:id="@+id/aktif_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="@string/aktif_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintStart_toStartOf="@id/name_guru"
+            app:layout_constraintTop_toBottomOf="@id/name_guru" />
+
+        <TextView
+            android:id="@+id/hadir_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/hadir_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="@id/cons_img"
+            app:layout_constraintTop_toBottomOf="@id/img_guru" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#00000000"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cons_img">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_info_white_24dp"
+            android:contentDescription="@string/information_detail_teacher" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_information">
+
+        <TextView
+            android:id="@+id/nip_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/nip_guru"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="#8E9297"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/detail_nip_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/detail_nip_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintTop_toBottomOf="@id/nip_guru"
+            app:layout_constraintStart_toStartOf="@id/nip_guru"/>
+
+        <TextView
+            android:id="@+id/telepon_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/no_guru"
+            android:textColor="#8E9297"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/detail_email_guru"
+            app:layout_constraintStart_toStartOf="@id/detail_email_guru"/>
+
+        <TextView
+            android:id="@+id/detail_telepon_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/detail_no_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintTop_toBottomOf="@id/telepon_guru"
+            app:layout_constraintStart_toStartOf="@id/telepon_guru"/>
+
+
+        <TextView
+            android:id="@+id/email_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/email_guru"
+            android:textColor="#8E9297"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/detail_nip_guru"
+            app:layout_constraintStart_toStartOf="@id/detail_nip_guru"/>
+
+        <TextView
+            android:id="@+id/detail_email_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/detail_email_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintTop_toBottomOf="@id/email_guru"
+            app:layout_constraintStart_toStartOf="@id/email_guru"/>
+
+
+        <TextView
+            android:id="@+id/alamat_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/alamat"
+            android:textColor="#8E9297"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/detail_telepon_guru"
+            app:layout_constraintStart_toStartOf="@id/detail_telepon_guru"/>
+
+        <TextView
+            android:id="@+id/detail_alamat_guru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/alamat_guru"
+            android:textColor="@color/mainWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintTop_toBottomOf="@id/alamat_guru"
+            app:layout_constraintStart_toStartOf="@id/alamat_guru"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
