@@ -9,12 +9,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hadir.hadirapp.LoginActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <ImageView
         android:id="@+id/logo_splash"
-        android:layout_width="@dimen/dimens_196dp"
+        android:layout_width="@dimen/_180sdp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/logo_app_white"
@@ -27,11 +26,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="@dimen/_32sdp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/hello_there"
         android:textColor="@color/mainWhite"
-        android:textSize="32sp"
+        android:textSize="@dimen/_28ssp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,16 +44,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:textColor="@color/mainWhite"
         android:textColorHint="@color/mainWhite"
         app:hintAnimationEnabled="true"
@@ -73,15 +69,15 @@
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             android:textColor="@color/mainWhite"
-            android:textSize="15sp" />
+            android:textSize="@dimen/_13ssp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:textColor="@color/mainWhite"
         android:textColorHint="@color/mainWhite"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
@@ -100,7 +96,7 @@
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
             android:textColor="@color/mainWhite"
-            android:textSize="15sp" />
+            android:textSize="@dimen/_13ssp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -110,18 +106,17 @@
         android:layout_height="wrap_content"
         android:text="@string/text_login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
         android:id="@+id/register_here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_24dp"
+        android:layout_marginTop="@dimen/_23sdp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/text_register_an_account"
         android:textColor="@color/colorBluePrimary"
-        android:textSize="@dimen/size_12sp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -135,7 +130,7 @@
         android:fontFamily="@font/avenir_medium"
         android:text="@string/tips_register"
         android:textColor="@color/mainWhite"
-        android:textSize="@dimen/size_12sp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toTopOf="@+id/register_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -144,11 +139,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="@dimen/_2sdp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/text_forgot_password"
         android:textColor="@color/colorBluePrimary"
-        android:textSize="@dimen/size_12sp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
@@ -159,10 +154,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:layout_marginTop="@dimen/_58sdp"
+        android:layout_marginEnd="@dimen/_29sdp"
+        android:layout_marginBottom="@dimen/_58sdp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"

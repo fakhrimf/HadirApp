@@ -17,16 +17,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dimens_16dp">
+        android:padding="@dimen/_12sdp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="354dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="@dimen/_94sdp"
+            android:layout_marginTop="@dimen/_19sdp"
             android:onClick="@{()->listener.onClickItem(model)}"
             app:cardBackgroundColor="@color/cardDark"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="5dp"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_3sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:text="@{model.teacherModel.name}"
                     android:textColor="@color/mainWhite"
-                    android:textSize="@dimen/size_18sp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -65,12 +65,13 @@
         </androidx.cardview.widget.CardView>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:elevation="15dp"
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="@dimen/_54sdp"
+            android:elevation="@dimen/_10sdp"
             android:src="@drawable/default_profile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
