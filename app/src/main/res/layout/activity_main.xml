@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/logo_splash"
-            android:layout_width="@dimen/dimens_196dp"
+            android:layout_width="@dimen/_180sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/splash" />

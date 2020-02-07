@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/statistics"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ui.statistics.StatisticsFragment">
 
         <ImageView
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/logo_app_white"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/_32sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -31,7 +31,7 @@
             android:text="@string/text_team"
             android:fontFamily="@font/poppins_medium"
             android:textColor="#ffff"
-            android:textSize="@dimen/size_20sp"
+            android:textSize="@dimen/_18ssp"
             app:layout_constraintTop_toBottomOf="@id/Logo_Statistics"
             app:layout_constraintEnd_toEndOf="@id/Logo_Statistics"/>
 
@@ -40,7 +40,7 @@
             android:id="@+id/list_siswa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="@dimen/_29sdp"
             app:layout_constraintTop_toBottomOf="@id/team_statistics"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">

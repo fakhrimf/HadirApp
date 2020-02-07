@@ -9,11 +9,11 @@
         android:id="@+id/text_statistic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_31sdp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/text_statistic"
         android:textColor="#ffff"
-        android:textSize="@dimen/size_30sp"
+        android:textSize="@dimen/_30ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
         android:id="@+id/tvPersentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100%"
+        android:text="@string/persentage_statistic"
         android:textSize="@dimen/_24sdp"
         android:textColor="#5AB84A"
         android:fontFamily="@font/avenir_medium"
@@ -54,12 +54,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/image_tips"
-            android:layout_width="270dp"
+            android:layout_width="@dimen/_220sdp"
             android:layout_height="@dimen/dimens_160dp"
             android:layout_marginStart="-20dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="@dimen/_79sdp"
             app:cardBackgroundColor="#FF424242"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="@dimen/_16sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/circularProgress">
 
@@ -71,15 +71,16 @@
                 <RelativeLayout
                     android:layout_width="@dimen/_130sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:layout_marginStart="@dimen/_26sdp"
                     android:orientation="horizontal">
                     <ImageView
                         android:id="@+id/icon_kehadiran"
-                        android:layout_width="11dp"
-                        android:layout_height="11dp"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
                         android:src="@drawable/dot"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/_10sdp"/>
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:contentDescription="@string/data_statistic" />
 
                     <TextView
                         android:id="@+id/text_kehadiran"
@@ -88,8 +89,8 @@
                         android:text="@string/kehadiran_statistic"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_toRightOf="@id/icon_kehadiran"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_toEndOf="@id/icon_kehadiran"/>
 
                     <TextView
                         android:id="@+id/angka_kehadiran"
@@ -98,22 +99,22 @@
                         android:text="@string/kehadiran_statistic_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_alignParentRight="true"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="@dimen/_130sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
-                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:layout_marginStart="@dimen/_26sdp"
                     android:orientation="horizontal">
                     <ImageView
                         android:id="@+id/icon_izin"
-                        android:layout_width="11dp"
-                        android:layout_height="11dp"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
                         android:src="@drawable/dot2"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/_10sdp"/>
+                        android:layout_marginEnd="@dimen/_10sdp"/>
 
                     <TextView
                         android:id="@+id/text_izin"
@@ -122,8 +123,8 @@
                         android:text="@string/kehadiran_izin"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_toRightOf="@id/icon_izin"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_toEndOf="@id/icon_izin"/>
 
                     <TextView
                         android:id="@+id/angka_izin"
@@ -132,22 +133,22 @@
                         android:text="@string/kehadiran_izin_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_alignParentRight="true"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="@dimen/_130sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
-                    android:layout_marginLeft="@dimen/_26sdp"
+                    android:layout_marginStart="@dimen/_26sdp"
                     android:orientation="horizontal">
                     <ImageView
                         android:id="@+id/icon_sakit"
-                        android:layout_width="11dp"
-                        android:layout_height="11dp"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
                         android:src="@drawable/dot3"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/_10sdp"/>
+                        android:layout_marginEnd="@dimen/_10sdp"/>
 
                     <TextView
                         android:id="@+id/text_sakit"
@@ -156,8 +157,8 @@
                         android:text="@string/kehadiran_sakit"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_toRightOf="@id/icon_sakit"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_toEndOf="@id/icon_sakit"/>
 
                     <TextView
                         android:id="@+id/angka_sakit"
@@ -166,8 +167,8 @@
                         android:text="@string/kehadiran_sakit_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/size_16sp"
-                        android:layout_alignParentRight="true"/>
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
             </LinearLayout>
 

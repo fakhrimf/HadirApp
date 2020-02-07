@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/dimens_200dp"
-    android:layout_height="180dp"
+    android:layout_width="@dimen/_160sdp"
+    android:layout_height="@dimen/_150sdp"
     android:background="#1A1F1F1F"
-    android:padding="15dp">
+    android:padding="@dimen/_10sdp">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logo_siswa"
-        android:layout_width="@dimen/dimens_80dp"
-        android:layout_height="@dimen/dimens_80dp"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
         android:src="@drawable/fakhri"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:text="@string/name_about_us"
         android:textColor="#ffff"
-        android:textSize="15dp"
+        android:textSize="@dimen/_12ssp"
         android:fontFamily="@font/poppins_regular"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/_3sdp"
         app:layout_constraintTop_toBottomOf="@id/logo_siswa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:text="@string/email_about_us"
         android:textColor="#ffff"
-        android:layout_marginTop="5dp"
-        android:textSize="@dimen/dimens_12dp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/poppins_regular"
         app:layout_constraintTop_toBottomOf="@id/nama_siswa"
         app:layout_constraintStart_toStartOf="parent"

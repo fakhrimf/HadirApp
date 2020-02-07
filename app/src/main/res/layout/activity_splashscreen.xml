@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="@dimen/dimens_196dp"
+        android:layout_width="@dimen/_180sdp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/logo_app_white"
@@ -23,8 +23,8 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens_32dp"
-        android:layout_marginEnd="@dimen/dimens_32dp"
+        android:layout_marginStart="@dimen/_27sdp"
+        android:layout_marginEnd="@dimen/_27sdp"
         android:max="100"
         android:progressBackgroundTint="@color/mainWhite"
         android:progressTint="@color/mainWhite"
