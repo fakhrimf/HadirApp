@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="listener"
-            type="com.hadir.hadirapp.teacher.TeacherUserActionListener" />
+            type="com.hadir.hadirapp.ui.home.listener.HomeActionListener" />
 
         <variable
             name="model"
-            type="com.hadir.hadirapp.model.TeacherModel" />
+            type="com.hadir.hadirapp.model.DailyDataModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,9 +38,10 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{model.name}"
+                    android:text="@{model.teacherModel.name}"
                     android:textColor="@color/mainWhite"
                     android:textSize="@dimen/size_18sp"
                     android:textStyle="bold"
@@ -48,6 +50,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:text="@{model.waktu_masuk}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/mainWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="07:00" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
