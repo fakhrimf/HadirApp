@@ -24,27 +24,17 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/logo_hadir" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/avenir_medium"
-        android:text="@string/hello_there"
-        android:textColor="@color/mainWhite"
-        android:textSize="@dimen/_28ssp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/username"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenir_medium"
+        android:textSize="@dimen/_12ssp"
         android:text="@string/text_sub_login"
         android:textColor="@color/mainWhite"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_splash" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -59,8 +49,10 @@
         app:hintEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -81,11 +73,15 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:textColor="@color/mainWhite"
+        app:passwordToggleTint="@color/mainWhite"
+        app:passwordToggleEnabled="true"
         android:textColorHint="@color/mainWhite"
         app:layout_constraintBottom_toTopOf="@id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username">
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="0.196">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -108,7 +104,9 @@
         android:layout_height="wrap_content"
         android:text="@string/text_login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="0.435"
+        tools:layout_editor_absoluteX="16dp" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/login_with_google"
@@ -119,8 +117,22 @@
         android:text="@string/login_with_google"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.113"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/avenir_medium"
+
+        android:text="@string/login_with"
+        android:textColor="@color/mainWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
     <TextView
         android:id="@+id/register_here"
@@ -128,8 +140,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:fontFamily="@font/avenir_medium"
-        android:text="@string/text_register_an_account"
-        android:textColor="@color/colorBluePrimary"
+        android:text="@string/please_contact"
+        android:textColor="@color/blue_light"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,6 +151,7 @@
         app:layout_constraintVertical_bias="0.886" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenir_medium"
@@ -153,15 +166,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/avenir_medium"
         android:text="@string/text_forgot_password"
         android:textColor="@color/colorBluePrimary"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_with_google"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.046" />
 
     <ProgressBar
         android:id="@+id/loading"

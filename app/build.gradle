@@ -81,6 +81,8 @@ dependencies {
 
     // NavController Support -> Material Drawer
     implementation "com.mikepenz:materialdrawer-nav:8.0.0-a07"
+    implementation 'com.mikepenz:crossfader:1.6.0'
+    implementation('com.mikepenz:crossfadedrawerlayout:1.1.0')
 
     //do the firebase thing here
     implementation 'com.google.firebase:firebase-database:19.2.0'

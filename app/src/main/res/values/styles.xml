@@ -15,7 +15,8 @@
         <item name="colorPrimary">@color/backgroundDark</item>
         <item name="colorPrimaryDark">@color/backgroundDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
+        <item name="materialDrawerStyle">@style/Widget.MaterialDrawerStyleCustom</item>
+        <item name="materialDrawerHeaderStyle">@style/Widget.MaterialDrawerHeaderStyleCustom</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -49,6 +50,33 @@
         <item name="android:background">@drawable/btn_white_primary_rounded_bg</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
+    </style>
+
+    // define a custom drawer style
+    <style name="Widget.MaterialDrawerStyleCustom" parent="Widget.MaterialDrawerStyle">
+        <item name="materialDrawerInsetForeground">#4000</item>
+        <!-- MaterialDrawer specific values -->
+        <item name="materialDrawerBackground">@color/colorPrimary</item>
+        <item name="materialDrawerPrimaryText">@color/mainWhite</item>
+        <item name="materialDrawerPrimaryIcon">@color/mainWhite</item>
+        <item name="materialDrawerSecondaryText">@color/mainWhite</item>
+        <item name="materialDrawerSecondaryIcon">@color/mainWhite</item>
+        <item name="materialDrawerDividerColor">@color/mainWhite</item>
+        <item name="materialDrawerSelectedBackgroundColor">@color/mainWhite</item>
+    </style>
+
+    // define a custom header style
+    <style name="Widget.MaterialDrawerHeaderStyleCustom" parent="">
+        <item name="materialDrawerHeaderSelectionText">@color/mainWhite</item>
+        <item name="materialDrawerHeaderSelectionSubtext">@color/mainWhite</item>
+    </style>
+
+    // define the custom styles for the theme
+    <style name="SampleApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        ...
+        <item name="materialDrawerStyle">@style/Widget.MaterialDrawerStyleCustom</item>
+        <item name="materialDrawerHeaderStyle">@style/Widget.MaterialDrawerHeaderStyleCustom</item>
+        ...
     </style>
 
 </resources>
