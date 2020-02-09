@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.hadir.hadirapp"
-        minSdkVersion 26
+        minSdkVersion 25
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -88,6 +88,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.2.0'
     implementation 'com.google.firebase:firebase-core:17.2.2'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     //play service auth
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
