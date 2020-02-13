@@ -1,5 +1,6 @@
 package com.hadir.hadirapp
 
+import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -28,11 +29,14 @@ import com.mikepenz.materialdrawer.model.interfaces.withIdentifier
 import com.mikepenz.materialdrawer.model.interfaces.withName
 import com.mikepenz.materialdrawer.util.getOptimalDrawerWidth
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.app_bar_home.*
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var headerView: AccountHeaderView
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+
+
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, HomeActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -55,6 +59,7 @@ class HomeActivity : AppCompatActivity() {
 //        val profile4 = ProfileDrawerItem().withName("Mr. X").withEmail("mister.x.super@gmail.com").withIcon(R.drawable.profile4)
 //        val profile5 = ProfileDrawerItem().withName("Batman").withEmail("batman@gmail.com").withIcon(R.drawable.profile5)
 
+        actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
 
         val profile = ProfileDrawerItem().apply {
             name = StringHolder("Muhamad Alfi")
@@ -168,6 +173,7 @@ class HomeActivity : AppCompatActivity() {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 //        navView.setupWithNavController(navController)
     }
+
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
