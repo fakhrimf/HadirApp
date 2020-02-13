@@ -19,13 +19,6 @@ import com.hadir.hadirapp.ui.login.LoginFragment
 
 class LoginActivity : BaseActivity() {
 
-    companion object {
-        val RC_SIGN_IN: Int = 1
-        val user = FirebaseAuth.getInstance().currentUser
-
-    }
-
-    lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +28,7 @@ class LoginActivity : BaseActivity() {
     }
 
     //get firebase instance to send it to db
-    override fun onStart() {
-        super.onStart()
-        val  user = FirebaseAuth.getInstance().currentUser
-        if(user != null){
-            startActivity(MainActivity.getLaunchIntent(this))
-            finish()
-        }
 
-    }
 
 
 

@@ -21,7 +21,6 @@ import com.hadir.hadirapp.*
 import com.hadir.hadirapp.model.TeacherModel
 import com.hadir.hadirapp.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_login.password
 
 class LoginFragment : BaseFragment() {
 
@@ -30,10 +29,11 @@ class LoginFragment : BaseFragment() {
     }
 
     companion object {
-        fun newInstance() = LoginFragment()
         val RC_SIGN_IN: Int = 1
+        val user = FirebaseAuth.getInstance().currentUser
 
     }
+
 
     lateinit var firebaseAuth: FirebaseAuth
     private lateinit var TextView: TextView
@@ -47,6 +47,17 @@ class LoginFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val  user = FirebaseAuth.getInstance().currentUser
+        if(user != null){
+            startActivity<MainActivity>(requireContext())
+            (activity as LoginActivity).finish()
+
+        }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -98,7 +109,7 @@ class LoginFragment : BaseFragment() {
     //login with email
     private fun loginWithEmail(){
         val email =  email.toString()
-        val password = password.toString()
+        val password = passwordField.toString()
 
         if(email.isNotEmpty() && password.isNotEmpty()){
             firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
@@ -136,7 +147,7 @@ class LoginFragment : BaseFragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == LoginActivity.RC_SIGN_IN){
+        if(requestCode == RC_SIGN_IN){
             val task : Task<GoogleSignInAccount> =
                 GoogleSignIn.getSignedInAccountFromIntent(data)
 

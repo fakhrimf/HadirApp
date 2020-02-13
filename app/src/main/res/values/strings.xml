@@ -20,6 +20,35 @@
     <string name="create_an_account">"Create an account"</string>
     <string name="text_login_here">"Login Here"</string>
     <string name="text_register">"REGISTER"</string>
+    <string name="text_statistic">Statistics</string>
+    <string name="text_team">Team</string>
+    <string name="name_about_us">Fakhri Maulana Falah</string>
+    <string name="email_about_us">fakhrimf@gmail.com</string>
+    <string name="kehadiran_statistic">Kehadiran</string>
+    <string name="kehadiran_statistic_angka">80</string>
+    <string name="kehadiran_izin">Izin</string>
+    <string name="kehadiran_izin_angka">5</string>
+    <string name="kehadiran_sakit">Sakit</string>
+    <string name="kehadiran_sakit_angka">2</string>
+    <string name="dot">dot</string>
+    <string name="nip_guru">NIP</string>
+    <string name="detail_nip_guru">171811710014</string>
+    <string name="name_guru">John Doe</string>
+    <string name="aktif_guru">AKTIF</string>
+    <string name="hadir_guru">Hadir</string>
+    <string name="information_detail_teacher">Information Detail Teacher</string>
+    <string name="alamat_guru">Jl. Kliningan No. 6</string>
+    <string name="no_guru">Nomor HP</string>
+    <string name="detail_no_guru">081234182911</string>
+    <string name="email_guru">Email</string>
+    <string name="detail_email_guru">fakhri2020@gmail.com</string>
+    <string name="alamat">Alamat</string>
+    <string name="persentage_statistic">100%</string>
+    <string name="data_statistic">Data Statistic</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -41,16 +70,13 @@
     <string name="default_name">Name</string>
     <string name="login_with_google">Login With Google</string>
     <string name="email">Email</string>
-    <string name="text_statistic">Statistics</string>
-    <string name="text_team">Team</string>
-    <string name="name_about_us">Fakhri Maulana Falah</string>
-    <string name="email_about_us">fakhrimf@gmail.com</string>
-    <string name="kehadiran_statistic">Kehadiran</string>
-    <string name="kehadiran_statistic_angka">80</string>
-    <string name="kehadiran_izin">Izin</string>
-    <string name="kehadiran_izin_angka">5</string>
-    <string name="kehadiran_sakit">Sakit</string>
-    <string name="kehadiran_sakit_angka">2</string>
 
 
+    <string name="other">Other</string>
+    <string name="logo_hadir">Logo Hadir</string>
+    <string name="text_statistik">Statistik</string>
+    <string name="text_profile">Profile</string>
+    <string name="login_with">OR LOGIN WITH</string>
+    <string name="please_contact">Please Contact an Administrator</string>
+    <string name="drawer_logout">Logout</string>
 </resources>

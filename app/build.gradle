@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
 android {
@@ -54,18 +55,46 @@ android {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
         implementation 'androidx.appcompat:appcompat:1.1.0'
         implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
-        implementation 'androidx.core:core-ktx:1.1.0'
-        implementation 'de.hdodenhof:circleimageview:2.1.0'
+        implementation 'androidx.core:core-ktx:1.2.0'
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
         implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-        implementation 'com.google.android.material:material:1.0.0'
+        implementation 'com.google.android.material:material:1.1.0'
         implementation 'androidx.annotation:annotation:1.1.0'
+        implementation 'net.danlew:android.joda:2.10.3'
+        implementation 'com.squareup.picasso:picasso:2.71828'
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+
+        //CircularProgressBar
+        implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+
+        //Dimen
+        implementation 'com.intuit.sdp:sdp-android:1.0.6'
+        implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
         implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-        implementation 'androidx.navigation:navigation-fragment:2.2.0'
-        implementation 'androidx.navigation:navigation-ui:2.2.0'
-        implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
-        implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
-        implementation 'androidx.fragment:fragment-ktx:1.2.0'
+        implementation 'androidx.navigation:navigation-fragment:2.2.1'
+        implementation 'androidx.navigation:navigation-ui:2.2.1'
+        implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
+        implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+        implementation 'androidx.fragment:fragment-ktx:1.2.1'
+
+        //Circle Image
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+        //Material Drawer
+        implementation "com.mikepenz:materialdrawer:8.0.0-a07"
+
+        // NavController Support -> Material Drawer
+        implementation "com.mikepenz:materialdrawer-nav:8.0.0-a07"
+        // NavController Support -> Material Drawer
+        implementation "com.mikepenz:materialdrawer-nav:8.0.0-a07"
+        implementation 'com.mikepenz:crossfader:1.6.0'
+        implementation('com.mikepenz:crossfadedrawerlayout:1.1.0')
+
+
 
         //Circle Image
         implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -77,44 +106,18 @@ android {
         implementation "com.mikepenz:materialdrawer-nav:8.0.0-a07"
 
         //do the firebase thing here
-        implementation 'com.google.firebase:firebase-database:19.2.0'
+        implementation 'com.google.firebase:firebase-database:19.2.1'
         implementation 'com.google.firebase:firebase-core:17.2.2'
         implementation 'com.google.firebase:firebase-auth:19.2.0'
-        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+        implementation 'com.google.firebase:firebase-messaging:20.1.0'
+
         //play service auth
         implementation 'com.google.android.gms:play-services-auth:17.0.0'
-        implementation 'com.squareup.picasso:picasso:2.71828'
-        implementation 'com.squareup.picasso:picasso:2.71828'
-        implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-        implementation 'com.google.firebase:firebase-database:19.2.0'
-        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
-        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.1.0'
-        implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-        implementation 'androidx.navigation:navigation-fragment:2.2.0'
-        implementation 'androidx.navigation:navigation-ui:2.2.0'
-        implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
-        implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
-        implementation 'androidx.fragment:fragment-ktx:1.2.0'
 
-        //Circle Image
-        implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-        //Material Drawer
-        implementation "com.mikepenz:materialdrawer:8.0.0-a07"
-
-        // NavController Support -> Material Drawer
-        implementation "com.mikepenz:materialdrawer-nav:8.0.0-a07"
-
-        //do the firebase thing here
-        implementation 'com.google.firebase:firebase-database:19.2.0'
-        implementation 'com.google.firebase:firebase-core:17.2.2'
-        implementation 'com.google.firebase:firebase-auth:19.2.0'
-        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-        //play service auth
-        implementation 'com.google.android.gms:play-services-auth:17.0.0'
         testImplementation 'junit:junit:4.12'
         androidTestImplementation 'androidx.test.ext:junit:1.1.1'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
     }
 }

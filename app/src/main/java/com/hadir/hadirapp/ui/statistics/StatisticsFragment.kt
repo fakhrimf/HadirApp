@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.DailyDataModel
 import com.hadir.hadirapp.model.TeacherModel
+import org.joda.time.LocalDate
+import java.util.*
 
 class StatisticsFragment : Fragment() {
     private val vm by lazy {
@@ -32,8 +33,9 @@ class StatisticsFragment : Fragment() {
         vm.getTeachersData().observe(viewLifecycleOwner, Observer<ArrayList<TeacherModel>> {
             Log.d("TEACHER_LIST", "onActivityCreated: $it")
         })
-        vm.getDailyData(this).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
+        vm.getDailyData(viewLifecycleOwner, Date()).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
             Log.d("TEACHER_LIST_DAILY", "onActivityCreated: $it")
         })
+        vm.getPresentDataPerYear(viewLifecycleOwner, LocalDate(Date()))
     }
 }

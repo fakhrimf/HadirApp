@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hadir.hadirapp">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,11 +14,11 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Home"></activity>
+            android:theme="@style/Home">
+        </activity>
         <activity
             android:name="com.hadir.hadirapp.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".RegisterActivity" />
         <activity
             android:name=".SplashscreenActivity"
             android:noHistory="true"
@@ -29,5 +30,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <service android:name=".utils.FirebaseNotification">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 </manifest>

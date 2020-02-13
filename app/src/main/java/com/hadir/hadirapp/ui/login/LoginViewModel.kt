@@ -10,21 +10,16 @@ import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.TeacherModel
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
-    companion object{
+    companion object {
         val RC_SIGN_IN: Int = 1
     }
 
-
-    private  val firebaseAuth by lazy {
+    private val firebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
 
-    private val context by lazy{
+    private val context by lazy {
         getApplication() as Context
-    }
-
-
-    private val mDatabase by lazy{
     }
 
     private val googleSignInOptions: GoogleSignInOptions by lazy {
@@ -38,9 +33,6 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val teacherList by lazy {
         MutableLiveData<ArrayList<TeacherModel>>()
     }
-
-
-
 
 
 }
