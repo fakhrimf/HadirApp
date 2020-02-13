@@ -114,6 +114,9 @@ android {
         //play service auth
         implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
+        //Retrofit and GSON Converter
+        implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+        implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
         testImplementation 'junit:junit:4.12'
         androidTestImplementation 'androidx.test.ext:junit:1.1.1'

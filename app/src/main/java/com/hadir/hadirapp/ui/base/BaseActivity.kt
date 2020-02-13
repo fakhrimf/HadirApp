@@ -20,7 +20,6 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun addFragment(fragment: Fragment) {
-
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.container, fragment, fragment.javaClass.simpleName)
