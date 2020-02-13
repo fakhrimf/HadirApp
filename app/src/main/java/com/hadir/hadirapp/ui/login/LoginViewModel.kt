@@ -4,21 +4,19 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.TeacherModel
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
-    companion object {
-        val RC_SIGN_IN: Int = 1
-    }
-
-    private val firebaseAuth by lazy {
+    val firebaseAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
 
-    private val context by lazy {
+    val context by lazy {
         getApplication() as Context
     }
 
@@ -29,10 +27,6 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
             .build()
     }
 
-
-    private val teacherList by lazy {
-        MutableLiveData<ArrayList<TeacherModel>>()
-    }
-
+    fun getClient(): GoogleSignInClient = GoogleSignIn.getClient(context, googleSignInOptions)
 
 }

@@ -1,24 +1,23 @@
 package com.hadir.hadirapp.ui.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.DatabaseReference
-import com.hadir.hadirapp.*
-import com.hadir.hadirapp.model.TeacherModel
+import com.hadir.hadirapp.LoginActivity
+import com.hadir.hadirapp.MainActivity
+import com.hadir.hadirapp.R
+import com.hadir.hadirapp.StatisticsActivity
 import com.hadir.hadirapp.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -26,20 +25,23 @@ class LoginFragment : BaseFragment() {
 
 
     private val vm by lazy {
+        ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
+        ).get(
+            LoginViewModel::class.java
+        )
     }
 
     companion object {
         val RC_SIGN_IN: Int = 1
-        val user = FirebaseAuth.getInstance().currentUser
-
+        fun getLaunchIntent(from: Context) = Intent(from, LoginActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        }
     }
 
+    val clicked = false
 
-    lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var TextView: TextView
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-    lateinit var mGoogleSignInOptions: GoogleSignInOptions
-    lateinit var mDatabase: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,9 +64,6 @@ class LoginFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        firebaseAuth = FirebaseAuth.getInstance()
-        configureGoogleSignIn()
         setUp()
         setUpWithEmail()
 
@@ -72,22 +71,11 @@ class LoginFragment : BaseFragment() {
             val intent = Intent(requireContext(), StatisticsActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 
-    private  fun configureGoogleSignIn(){
-        mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(),
-            mGoogleSignInOptions
-        )
-    }
 
-    private  fun signIn(){
-        val signIntent=Intent (mGoogleSignInClient.signInIntent)
+    private fun signIn() {
+        val signIntent: Intent = vm.getClient().signInIntent
         startActivityForResult(signIntent, RC_SIGN_IN)
     }
 
@@ -112,22 +100,23 @@ class LoginFragment : BaseFragment() {
         val password = passwordField.toString()
 
         if(email.isNotEmpty() && password.isNotEmpty()){
-            firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
-                if(it.isSuccessful){
-                    val user = firebaseAuth.currentUser
-                    val uId = user!!.uid
+            vm.firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+                if (it.isSuccessful && !clicked) {
+                    val user = vm.firebaseAuth.currentUser
+                    startActivity(MainActivity.getLaunchIntent(requireContext()))
+                    Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
 
-                    if(user.email == email ) {
-                        mDatabase.child(uId).child("email").setValue(email)
-                        startActivity<MainActivity>(requireContext())
-                        Toast.makeText(requireContext(), "Login Success",Toast.LENGTH_SHORT).show()
-                    }
                 }else{
-                    Toast.makeText(requireContext(), "Error registering, try again later :(", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Error Login, try again later ",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }else{
-            Toast.makeText(requireContext(),"Please fill up the Credentials :|", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Please fill up the Credentials", Toast.LENGTH_LONG)
+                .show()
         }
     }
 
@@ -135,7 +124,7 @@ class LoginFragment : BaseFragment() {
     private  fun firebaseAuthWithGoogle(acct: GoogleSignInAccount){
         val credential = GoogleAuthProvider.getCredential(acct.idToken,null)
 
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
+        vm.firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful){
                 startActivity(MainActivity.getLaunchIntent(requireContext()))
             }else{
@@ -163,5 +152,7 @@ class LoginFragment : BaseFragment() {
             }
 
         }
+
+
     }
 }
