@@ -1,15 +1,20 @@
 package com.hadir.hadirapp.ui.statistics
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.R
+import com.hadir.hadirapp.model.DailyDataModel
+import com.hadir.hadirapp.model.TeacherModel
 
 class StatisticsFragment : Fragment() {
-    val vm by lazy {
+    private val vm by lazy {
         ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(StatisticsViewModel::class.java)
     }
 
@@ -23,6 +28,12 @@ class StatisticsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.d("TEACHER_LIST", "onActivityCreated: activity created.")
+        vm.getTeachersData().observe(viewLifecycleOwner, Observer<ArrayList<TeacherModel>> {
+            Log.d("TEACHER_LIST", "onActivityCreated: $it")
+        })
+        vm.getDailyData(this).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
+            Log.d("TEACHER_LIST_DAILY", "onActivityCreated: $it")
+        })
     }
-
 }

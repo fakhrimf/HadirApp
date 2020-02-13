@@ -15,7 +15,7 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Home"></activity>
         <activity
-            android:name="com.hadir.hadirapp.ui.login.LoginActivity"
+            android:name="com.hadir.hadirapp.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".RegisterActivity" />
         <activity

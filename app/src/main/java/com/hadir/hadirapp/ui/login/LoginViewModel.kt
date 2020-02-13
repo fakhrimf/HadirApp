@@ -14,6 +14,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         val RC_SIGN_IN: Int = 1
     }
 
+
     private  val firebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
