@@ -4,7 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.hadir.hadirapp.ui.base.BaseActivity
+import com.hadir.hadirapp.ui.login.LoginFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
@@ -17,5 +20,15 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        logout.setOnClickListener {
+            signOut()
+        }
     }
+
+    private fun signOut() {
+        startActivity(LoginFragment.getLaunchIntent(this))
+        FirebaseAuth.getInstance().signOut()
+    }
+
 }
