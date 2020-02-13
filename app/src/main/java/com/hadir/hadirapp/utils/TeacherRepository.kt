@@ -186,9 +186,9 @@ class TeacherRepository {
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
         val list = ArrayList<DailyDataModel>()
         while (startMonth.isBefore(endMonth)) {
-            val dateMilli = Date.from(Instant.ofEpochMilli(startMonth.toDateTimeAtStartOfDay().toInstant().millis))
-            getDailyData(owner, dateMilli).observe(owner,
-                androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
+            if (startMonth.dayOfWeek != SUNDAY && startMonth.dayOfWeek != SATURDAY) {
+                val dateMilli = Date.from(Instant.ofEpochMilli(startMonth.toDateTimeAtStartOfDay().toInstant().millis))
+                getDailyData(owner, dateMilli).observe(owner, androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
                     for (i in it) {
                         list.add(i)
                         Log.d("####", "getPresentDataPerMonthByKey: ADDED $i")
@@ -196,6 +196,7 @@ class TeacherRepository {
                     liveData.value = list
                     Log.d("####", "getPresentDataPerMonthByKey: DAILY DATA $it")
                 })
+            }
             startMonth = startMonth.plusDays(1)
             Log.d("####", "getPresentDataPerMonthByKey: STARTMONTH = $startMonth")
         }
@@ -212,9 +213,9 @@ class TeacherRepository {
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
         val list = ArrayList<DailyDataModel>()
         while (startMonth.isBefore(endMonth)) {
-            val dateMilli = Date.from(Instant.ofEpochMilli(startMonth.toDateTimeAtStartOfDay().toInstant().millis))
-            getDailyData(owner, dateMilli, key).observe(owner,
-                androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
+            if (startMonth.dayOfWeek != SUNDAY && startMonth.dayOfWeek != SATURDAY) {
+                val dateMilli = Date.from(Instant.ofEpochMilli(startMonth.toDateTimeAtStartOfDay().toInstant().millis))
+                getDailyData(owner, dateMilli, key).observe(owner, androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
                     for (i in it) {
                         list.add(i)
                         Log.d("####", "getPresentDataPerMonthByKey: ADDED $i")
@@ -222,8 +223,9 @@ class TeacherRepository {
                     liveData.value = list
                     Log.d("####", "getPresentDataPerMonthByKey: DAILY DATA $it")
                 })
+                Log.d("####", "getPresentDataPerMonthByKey: STARTMONTH = $startMonth")
+            }
             startMonth = startMonth.plusDays(1)
-            Log.d("####", "getPresentDataPerMonthByKey: STARTMONTH = $startMonth")
         }
         liveData.observe(owner,
             androidx.lifecycle.Observer<ArrayList<DailyDataModel>> { dailyModel ->
@@ -234,12 +236,12 @@ class TeacherRepository {
 
     fun getPresentDataPerWeek(owner: LifecycleOwner, date: LocalDate): MutableLiveData<ArrayList<DailyDataModel>> {
         var startWeek = date.withDayOfWeek(MONDAY)
-        val endWeek = date.withDayOfWeek(SUNDAY)
+        val endWeek = date.withDayOfWeek(FRIDAY)
         val list = ArrayList<DailyDataModel>()
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
         while (startWeek.isBefore(endWeek)) {
             val dateMilli = Date.from(Instant.ofEpochMilli(startWeek.toDateTimeAtStartOfDay().toInstant().millis))
-            getDailyData(owner, dateMilli, "216886241240227144").observe(owner,
+            getDailyData(owner, dateMilli).observe(owner,
                 androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
                     for (i in it) {
                         list.add(i)
@@ -256,7 +258,7 @@ class TeacherRepository {
 
     fun getPresentDataPerWeek(owner: LifecycleOwner, date: LocalDate, key: String): MutableLiveData<ArrayList<DailyDataModel>> {
         var startWeek = date.withDayOfWeek(MONDAY)
-        val endWeek = date.withDayOfWeek(SUNDAY)
+        val endWeek = date.withDayOfWeek(FRIDAY)
         val list = ArrayList<DailyDataModel>()
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
         while (startWeek.isBefore(endWeek)) {
@@ -283,12 +285,13 @@ class TeacherRepository {
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
         list.clear()
         while (startYear.isBefore(endYear)) {
-            val dateMilli = Date.from(Instant.ofEpochMilli(startYear.toDateTimeAtStartOfDay().toInstant().millis))
-            getDailyData(owner, dateMilli).observe(owner,
-                androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
+            if (startYear.dayOfWeek != SUNDAY && startYear.dayOfWeek != SATURDAY) {
+                val dateMilli = Date.from(Instant.ofEpochMilli(startYear.toDateTimeAtStartOfDay().toInstant().millis))
+                getDailyData(owner, dateMilli).observe(owner, androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
                     list.addAll(it)
                     liveData.value = list
                 })
+            }
             startYear = startYear.plusDays(1)
         }
         return liveData
@@ -319,14 +322,14 @@ class TeacherRepository {
         } else {
             date.withMonthOfYear(JULY).dayOfYear().withMinimumValue()
         }
-        val endWeek = if (semester == 2) {
+        val endYear = if (semester == 2) {
             date.withMonthOfYear(JUNE).dayOfYear().withMaximumValue()
         } else {
             date.withMonthOfYear(DECEMBER).dayOfYear().withMaximumValue()
         }
         val list = ArrayList<DailyDataModel>()
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
-        while (startYear.isBefore(endWeek)) {
+        while (startYear.isBefore(endYear)) {
             val dateMilli = Date.from(Instant.ofEpochMilli(startYear.toDateTimeAtStartOfDay().toInstant().millis))
             getDailyData(owner, dateMilli).observe(owner,
                 androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
@@ -349,14 +352,14 @@ class TeacherRepository {
         } else {
             date.withMonthOfYear(JULY).dayOfYear().withMinimumValue()
         }
-        val endWeek = if (semester == 2) {
+        val endYear = if (semester == 2) {
             date.withMonthOfYear(JUNE).dayOfYear().withMaximumValue()
         } else {
             date.withMonthOfYear(DECEMBER).dayOfYear().withMaximumValue()
         }
         val list = ArrayList<DailyDataModel>()
         val liveData = MutableLiveData<ArrayList<DailyDataModel>>()
-        while (startYear.isBefore(endWeek)) {
+        while (startYear.isBefore(endYear)) {
             val dateMilli = Date.from(Instant.ofEpochMilli(startYear.toDateTimeAtStartOfDay().toInstant().millis))
             getDailyData(owner, dateMilli, key).observe(owner,
                 androidx.lifecycle.Observer<ArrayList<DailyDataModel>> {
@@ -371,6 +374,93 @@ class TeacherRepository {
             startYear = startYear.plusDays(1)
         }
         return liveData
+    }
+
+    fun getPresentInfoPerWeek(owner: LifecycleOwner, date: LocalDate, key: String): MutableLiveData<Float> {
+        val presentTime = MutableLiveData<Float>()
+        getPresentDataPerWeek(owner, date, key).observe(owner, androidx.lifecycle.Observer {
+            presentTime.value = it.size.toFloat()
+        })
+        return presentTime
+    }
+
+    fun getPresentInfoPerMonth(owner: LifecycleOwner, date: LocalDate, key: String): MutableLiveData<Int> {
+        val presentTime = MutableLiveData<Int>()
+        getPresentDataPerMonth(owner, date, key).observe(owner, androidx.lifecycle.Observer {
+            presentTime.value = it.size
+        })
+        return presentTime
+    }
+
+    fun getPresentInfoPerSemester(owner: LifecycleOwner, date: LocalDate, semester: Int, key: String): MutableLiveData<Int> {
+        val presentTime = MutableLiveData<Int>()
+        getPresentDataPerSemester(owner, date, semester, key).observe(owner, androidx.lifecycle.Observer {
+            presentTime.value = it.size
+        })
+        return presentTime
+    }
+
+    fun getPresentInfoPerYear(owner: LifecycleOwner, date: LocalDate, key: String): MutableLiveData<Int> {
+        val presentTime = MutableLiveData<Int>()
+        getPresentDataPerYear(owner, date, key).observe(owner, androidx.lifecycle.Observer {
+            presentTime.value = it.size
+        })
+        return presentTime
+    }
+
+    fun getWorkDayPerWeek(date: LocalDate): Int {
+        var startWeek = date.withDayOfWeek(MONDAY)
+        val endWeek = date.withDayOfWeek(FRIDAY)
+        var i = 0
+        while (startWeek.isBefore(endWeek)) {
+            i++
+            startWeek = startWeek.plusDays(1)
+        }
+        return i
+    }
+
+    fun getWorkDayPerMonth(date: LocalDate): Int {
+        var startMonth = date.dayOfMonth().withMinimumValue()
+        val endMonth = date.dayOfMonth().withMaximumValue()
+        var i = 0
+        while (startMonth.isBefore(endMonth)) {
+            if (startMonth.dayOfWeek != SATURDAY && startMonth.dayOfWeek != SUNDAY) {
+                i++
+            }
+            startMonth = startMonth.plusDays(1)
+        }
+        return i
+    }
+
+    fun getWorkDayPerSemester(date: LocalDate, semester: Int): Int {
+        var startYear = if (semester == 1) {
+            date.withMonthOfYear(JANUARY).dayOfYear().withMinimumValue()
+        } else {
+            date.withMonthOfYear(JULY).dayOfYear().withMinimumValue()
+        }
+        val endYear = if (semester == 2) {
+            date.withMonthOfYear(JUNE).dayOfYear().withMaximumValue()
+        } else {
+            date.withMonthOfYear(DECEMBER).dayOfYear().withMaximumValue()
+        }
+        var i = 0
+        while (startYear.isBefore(endYear)) {
+            if(startYear.dayOfWeek != SATURDAY && startYear.dayOfWeek != SUNDAY) i++
+            startYear = startYear.plusDays(1)
+        }
+        return i
+    }
+
+    fun getWorkDayPerYear(date: LocalDate): Int {
+        var startYear = date.withMonthOfYear(JANUARY).dayOfYear().withMinimumValue()
+        val endYear = date.withMonthOfYear(DECEMBER).dayOfYear().withMaximumValue()
+        var i = 0
+        while (startYear.isBefore(endYear)) {
+            if(startYear.dayOfWeek != SATURDAY && startYear.dayOfWeek != SUNDAY) i++
+            startYear = startYear.plusDays(1)
+        }
+        Log.d("%%%%", "getWorkDayPerYear: $i")
+        return i
     }
 
     companion object {
