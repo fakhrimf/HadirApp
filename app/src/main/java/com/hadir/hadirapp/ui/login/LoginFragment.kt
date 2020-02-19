@@ -14,10 +14,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.hadir.hadirapp.LoginActivity
-import com.hadir.hadirapp.MainActivity
-import com.hadir.hadirapp.R
-import com.hadir.hadirapp.StatisticsActivity
+import com.hadir.hadirapp.*
 import com.hadir.hadirapp.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -55,7 +52,7 @@ class LoginFragment : BaseFragment() {
         super.onStart()
         val  user = FirebaseAuth.getInstance().currentUser
         if(user != null){
-            startActivity<MainActivity>(requireContext())
+            startActivity<HomeActivity>(requireContext())
             (activity as LoginActivity).finish()
 
         }
@@ -68,7 +65,7 @@ class LoginFragment : BaseFragment() {
         setUpWithEmail()
 
         loginBtn.setOnClickListener {
-            val intent = Intent(requireContext(), StatisticsActivity::class.java)
+            val intent = Intent(requireContext(), HomeActivity::class.java)
             startActivity(intent)
         }
     }
@@ -103,7 +100,7 @@ class LoginFragment : BaseFragment() {
             vm.firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful && !clicked) {
                     val user = vm.firebaseAuth.currentUser
-                    startActivity(MainActivity.getLaunchIntent(requireContext()))
+                    startActivity(HomeActivity.getLaunchIntent(requireContext()))
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
 
                 }else{
@@ -126,7 +123,7 @@ class LoginFragment : BaseFragment() {
 
         vm.firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful){
-                startActivity(MainActivity.getLaunchIntent(requireContext()))
+                startActivity(HomeActivity.getLaunchIntent(requireContext()))
             }else{
                 Toast.makeText(requireContext(),"Google Sign In Failed", Toast.LENGTH_SHORT).show()
             }
