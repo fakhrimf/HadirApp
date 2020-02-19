@@ -13,7 +13,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/text_statistic"
         android:textColor="#ffff"
-        android:textSize="@dimen/size_30sp"
+        android:textSize="@dimen/_30sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,16 +21,20 @@
     <!--CircularProgressbar tinggal di set-->
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
-        app:cpb_progress_max="100"
         android:id="@+id/circularProgress"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
         app:cpb_progressbar_color="@color/progressBarGreen"
+        android:layout_marginTop="@dimen/_16sdp"
         app:cpb_background_progressbar_width="@dimen/_15sdp"
+        app:cpb_progress="56"
+        app:cpb_progress_max="100"
+        app:cpb_progressbar_color="@color/progressBarGreen"
+        app:cpb_progressbar_width="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_statistic"
-        android:layout_marginTop="@dimen/_16sdp"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_statistic"/>
+
 
     <TextView
         android:id="@+id/tvPersentage"
@@ -45,11 +49,22 @@
         app:layout_constraintRight_toRightOf="@id/circularProgress"
         app:layout_constraintBottom_toBottomOf="@id/circularProgress"/>
 
+    <Spinner android:id="@+id/spin_stat"
+        android:background="#ff424242"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circularProgress"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/circularProgress">
+        app:layout_constraintTop_toBottomOf="@id/spin_stat">
 
 
         <androidx.cardview.widget.CardView
@@ -57,7 +72,7 @@
             android:layout_width="270dp"
             android:layout_height="@dimen/dimens_160dp"
             android:layout_marginStart="-20dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="@dimen/_25sdp"
             app:cardBackgroundColor="#FF424242"
             app:cardCornerRadius="20dp"
             app:layout_constraintStart_toStartOf="parent"
