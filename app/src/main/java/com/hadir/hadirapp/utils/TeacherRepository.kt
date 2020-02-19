@@ -39,7 +39,6 @@ class TeacherRepository {
                 for (i in p0.children) {
                     val model = i.getValue(TeacherModel::class.java)
                     model?.let {
-                        it.id = i.key
                         list.add(it)
                     }
                 }
@@ -65,7 +64,6 @@ class TeacherRepository {
                     for (i in p0.children) {
                         val model = i.getValue(TeacherModel::class.java)
                         model?.let {
-                            it.id = i.key
                             list.add(it)
                         }
                         Log.d("TEACHER_DATA", "onDataChange: $model")
@@ -74,6 +72,12 @@ class TeacherRepository {
                 }
             })
         return teacherList
+    }
+
+    fun getTeacherData(generes: String): MutableLiveData<TeacherModel> {
+        val liveData = MutableLiveData<TeacherModel>()
+
+        return liveData
     }
 
     fun getTeacherDataByName(name: String): MutableLiveData<TeacherModel> {
@@ -89,9 +93,6 @@ class TeacherRepository {
                 override fun onDataChange(p0: DataSnapshot) {
                     for (i in p0.children) {
                         val model = i.getValue(TeacherModel::class.java)
-                        model?.let {
-                            it.id = i.key
-                        }
                         teacher.value = model
                         Log.d("TEACHER_DATA", "onDataChange: $model")
                     }
@@ -114,7 +115,7 @@ class TeacherRepository {
         val database = FirebaseDatabase.getInstance().reference
         val list = ArrayList<DailyDataModel>()
         val teacherList = MutableLiveData<ArrayList<DailyDataModel>>()
-        val dateString = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(date)
+        val dateString = SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).format(date)
         Log.d("####", "getDailyData: $dateString")
 
         database.child(DAILY_DATABASE_REF).child(dateString)
@@ -149,7 +150,7 @@ class TeacherRepository {
         val database = FirebaseDatabase.getInstance().reference
         val list = ArrayList<DailyDataModel>()
         val teacherList = MutableLiveData<ArrayList<DailyDataModel>>()
-        val dateString = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(date)
+        val dateString = SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).format(date)
         Log.d("####", "getDailyData: $dateString")
 
         database.child(DAILY_DATABASE_REF).child(dateString).orderByChild("id").equalTo(key)

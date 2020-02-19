@@ -13,6 +13,7 @@ import com.hadir.hadirapp.model.DailyDataModel
 import com.hadir.hadirapp.model.TeacherModel
 import org.joda.time.LocalDate
 import java.util.*
+import kotlin.collections.ArrayList
 
 class StatisticsFragment : Fragment() {
     private val vm by lazy {
@@ -36,6 +37,8 @@ class StatisticsFragment : Fragment() {
         vm.getDailyData(viewLifecycleOwner, Date()).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
             Log.d("TEACHER_LIST_DAILY", "onActivityCreated: $it")
         })
-        vm.getPresentDataPerYear(viewLifecycleOwner, LocalDate(Date()))
+        vm.getPresentDataPerYear(viewLifecycleOwner, LocalDate(Date())).observe(viewLifecycleOwner, Observer<ArrayList<DailyDataModel>> {
+            Log.d("TEACHER_YEARLY", "onActivityCreated: $it")
+        })
     }
 }
