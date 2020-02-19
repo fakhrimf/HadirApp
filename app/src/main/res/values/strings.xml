@@ -69,7 +69,7 @@
     <string name="default_go_home_time">--:--:--</string>
     <string name="default_name">Name</string>
     <string name="login_with_google">Login With Google</string>
-    <string name="email">Email</string>
+    <string name="email">Email / Username</string>
 
 
     <string name="other">Other</string>
@@ -79,4 +79,14 @@
     <string name="login_with">OR LOGIN WITH</string>
     <string name="please_contact">Please Contact an Administrator</string>
     <string name="drawer_logout">Logout</string>
+    <string name="auto_login">Performing auto login…</string>
+    <string name="session_expired">Session Expired, please login manually</string>
+    <string name="logging_in">Logging you in…</string>
+    <string name="username_password_error">Username / Password did not match.</string>
+    <string name="insert_grnrs">Insert GRNRS</string>
+    <string name="grnrs">GRNRS</string>
+    <string name="find_grnrs">FIND GRNRS</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="grnrs_error">GRNRS must not be empty</string>
+    <string name="no_grnrs_found">No GRNRS found</string>
 </resources>

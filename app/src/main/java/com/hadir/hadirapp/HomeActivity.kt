@@ -60,7 +60,6 @@ class HomeActivity : AppCompatActivity() {
             name = StringHolder("Muhamad Alfi")
             description = StringHolder("alfi@gmail.com")
             icon = ImageHolder(R.drawable.profile)
-
         }
 
         val item1 = PrimaryDrawerItem()
@@ -129,44 +128,6 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
-
-//        val item1 = PrimaryDrawerItem()
-//        item1.run {
-//            identifier = 1
-//            name = StringHolder(R.string.menu_home)
-//            textColor = ColorHolder.fromColorRes(R.color.mainWhite)
-//        }
-//        val item2 = SecondaryDrawerItem()
-//        item2.run {
-//            identifier = 2
-//            name = StringHolder(R.string.menu_gallery)
-//            textColor = ColorHolder.fromColorRes(R.color.mainWhite)
-//        }
-
-//        itemAdapter.add(
-//            item1,
-//            item2
-//        )
-//        toolbar.setNavigationOnClickListener {
-//            slider.drawerLayout?.openDrawer(slider)
-//        }
-
-
-
-//         Gada FindViewById, kecuali buat menu item
-//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)/
-//        val navView: NavigationView = findViewById(R.id.nav_view)
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        appBarConfiguration = AppBarConfiguration(
-//            setOf(
-//                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-//                R.id.nav_tools, R.id.nav_share, R.id.nav_send
-//            ), drawerLayout
-//        )
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-//        navView.setupWithNavController(navController)
     }
 
 
@@ -174,11 +135,6 @@ class HomeActivity : AppCompatActivity() {
         super.onConfigurationChanged(newConfig)
         actionBarDrawerToggle.onConfigurationChanged(newConfig)
     }
-
-//    override fun onPostCreate(savedInstanceState: Bundle?) {
-//        super.onPostCreate(savedInstanceState)
-//        actionBarDrawerToggle.syncState()
-//    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

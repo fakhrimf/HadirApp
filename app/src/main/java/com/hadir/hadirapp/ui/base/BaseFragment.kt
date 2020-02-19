@@ -30,6 +30,8 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
+    protected fun makeText(string: String?) = Toast.makeText(requireContext(), string, Toast.LENGTH_LONG).show()
+
     protected inline fun <reified act> startActivity(context: Context) {
         val intent = Intent(context, act::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

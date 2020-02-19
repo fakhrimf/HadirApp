@@ -12,6 +12,8 @@ data class TeacherModel(
     var active: Int = 0,
     var category: String? = "",
     var rfid_key: String? = "",
+    var username: String? = "",
+    var password: String? = "",
     @SerializedName("id_bio")
     val id: Int = 0,
     @SerializedName("nama_lengkap")

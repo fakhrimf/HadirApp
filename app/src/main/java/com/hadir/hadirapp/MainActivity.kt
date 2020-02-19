@@ -3,7 +3,6 @@ package com.hadir.hadirapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.hadir.hadirapp.ui.base.BaseActivity
 import com.hadir.hadirapp.ui.login.LoginFragment

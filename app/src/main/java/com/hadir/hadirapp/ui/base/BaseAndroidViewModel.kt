@@ -5,7 +5,12 @@ import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import com.hadir.hadirapp.model.TeacherModel
+import com.hadir.hadirapp.utils.SharedPreferenceUtils
 import com.hadir.hadirapp.utils.TeacherRepository
+import com.hadir.hadirapp.utils.source.ApiClient
+import com.hadir.hadirapp.utils.source.ApiInterface
 import org.joda.time.LocalDate
 import java.util.*
 
@@ -16,6 +21,28 @@ open class BaseAndroidViewModel(application: Application) : AndroidViewModel(app
     }
     val repo by lazy {
         TeacherRepository.newInstance()
+    }
+    val sharedPreferenceUtils by lazy {
+        SharedPreferenceUtils.newInstance(context)
+    }
+    val apiClient by lazy {
+        ApiClient.getClient()
+    }
+    val apiInterface by lazy {
+        apiClient.create(ApiInterface::class.java)
+    }
+
+    fun getCurrentUser(owner: LifecycleOwner) : MutableLiveData<TeacherModel> {
+        val liveData = MutableLiveData<TeacherModel>()
+        val username = sharedPreferenceUtils.getUsername()
+        getTeachersData().observe(owner, androidx.lifecycle.Observer {
+            for (i in it) {
+                if(i.username == username){
+                    liveData.value = i
+                }
+            }
+        })
+        return liveData
     }
 
     fun makeText(text: String) = Toast.makeText(context, text, Toast.LENGTH_LONG).show()
