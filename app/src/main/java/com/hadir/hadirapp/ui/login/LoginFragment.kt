@@ -31,19 +31,22 @@ class LoginFragment : BaseFragment() {
         if (username != null && password != null) {
             email.setText(username)
             passwordField.setText(password)
-            circularProgress.visibility = View.VISIBLE
-            makeText(getString(R.string.auto_login))
-            val isRight = vm.login(email.text.toString(), passwordField.text.toString(), viewLifecycleOwner)
-            isRight.observe(viewLifecycleOwner, Observer {
-                val intent = Intent(requireContext(), HomeActivity::class.java)
-                if (it) {
-                    startActivity(intent)
-                    requireActivity().finish()
-                } else if (!it) {
-                    tv_header.text = getString(R.string.session_expired)
-                    circularProgress.visibility = View.INVISIBLE
-                }
-            })
+            if(remember) {
+                checkBox.isChecked = true
+                circularProgress.visibility = View.VISIBLE
+                makeText(getString(R.string.auto_login))
+                val isRight = vm.login(email.text.toString(), passwordField.text.toString(), viewLifecycleOwner)
+                isRight.observe(viewLifecycleOwner, Observer {
+                    val intent = Intent(requireContext(), HomeActivity::class.java)
+                    if (it) {
+                        startActivity(intent)
+                        requireActivity().finish()
+                    } else if (!it) {
+                        tv_header.text = getString(R.string.session_expired)
+                        circularProgress.visibility = View.INVISIBLE
+                    }
+                })
+            }
         }
 
         loginBtn.setOnClickListener {
