@@ -97,7 +97,7 @@ class HomeActivity : AppCompatActivity() {
 
         headerView = AccountHeaderView(this).apply {
             attachToSliderView(crossFadeLargeView)
-            headerBackground = ImageHolder(R.drawable.header)
+            headerBackground = ImageHolder(R.drawable.background)
             addProfiles(
                 profile
             )
@@ -125,7 +125,6 @@ class HomeActivity : AppCompatActivity() {
 
         crossFadeSmallView.drawer = crossFadeLargeView
         drawer_layout.maxWidthPx = getOptimalDrawerWidth(this)
-        crossFadeSmallView.background = getDrawable(R.drawable.background)
 
         crossFadeSmallView.crossFader = object : ICrossfader {
 
