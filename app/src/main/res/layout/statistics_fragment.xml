@@ -13,7 +13,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/text_statistic"
         android:textColor="#ffff"
-        android:textSize="@dimen/_26sdp"
+        android:textSize="@dimen/_22sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

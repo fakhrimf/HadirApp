@@ -27,7 +27,6 @@ class StatisticsFragment : Fragment() {
     }
 
     private var curDate = LocalDate.now()
-    private var curOwner = vm.getCurrentUser(viewLifecycleOwner)
     private var numKehInMonth = 0
     private var numKehInWeek = 0
     private var numIz = 0
@@ -84,9 +83,12 @@ class StatisticsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        curOwner.observe(viewLifecycleOwner, Observer {
+        vm.getCurrentUser(viewLifecycleOwner).observe(viewLifecycleOwner, Observer {
             vm.getPresentInfoPerMonth(viewLifecycleOwner, LocalDate(), "${it.rfid_key}").observe(viewLifecycleOwner, Observer {info ->
-                numKehInMonth = info
+                numKehInMonth = info.toInt()
+            })
+            vm.getPresentInfoPerWeek(viewLifecycleOwner, LocalDate(), "${it.rfid_key}").observe(viewLifecycleOwner, Observer {info ->
+                numKehInWeek = info.toInt()
             })
         })
         Log.d("TEACHER_LIST", "onActivityCreated: activity created.")
