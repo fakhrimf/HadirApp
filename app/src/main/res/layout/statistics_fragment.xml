@@ -29,7 +29,6 @@
         app:cpb_background_progressbar_width="@dimen/_15sdp"
         app:cpb_progress="56"
         app:cpb_progress_max="100"
-        app:cpb_progressbar_color="@color/progressBarGreen"
         app:cpb_progressbar_width="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
