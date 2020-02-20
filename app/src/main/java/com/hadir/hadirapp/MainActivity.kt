@@ -19,15 +19,5 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        logout.setOnClickListener {
-            signOut()
-        }
     }
-
-    private fun signOut() {
-        startActivity(LoginFragment.getLaunchIntent(this))
-        FirebaseAuth.getInstance().signOut()
-    }
-
 }

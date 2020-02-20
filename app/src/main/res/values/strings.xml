@@ -70,8 +70,6 @@
     <string name="default_name">Name</string>
     <string name="login_with_google">Login With Google</string>
     <string name="email">Email / Username</string>
-
-
     <string name="other">Other</string>
     <string name="logo_hadir">Logo Hadir</string>
     <string name="text_statistik">Statistik</string>
@@ -89,4 +87,11 @@
     <string name="no_account">Don\'t have an account?</string>
     <string name="grnrs_error">GRNRS must not be empty</string>
     <string name="no_grnrs_found">No GRNRS found</string>
+    <string name="select_image">Select Image</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="success_add">Successfully added!</string>
+    <string name="username_empty">Username cannot be empty</string>
+    <string name="password_empty">Password cannot be empty</string>
+    <string name="dp_empty">Please insert display picture</string>
+    <string name="remember_me">Remember Me</string>
 </resources>
