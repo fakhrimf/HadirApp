@@ -4,6 +4,7 @@ import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -13,9 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import com.hadir.hadirapp.ui.home.HomeFragment
 import com.hadir.hadirapp.ui.profile.ProfileFragment
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
@@ -47,19 +45,24 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        toolbar.navigationIcon = getDrawable(R.drawable.ic_menu_white_24dp)
-        val listFragment = ArrayList<Fragment>()
-        listFragment.add(HomeFragment())
-        listFragment.add(StatisticsFragment())
-        listFragment.add(ProfileFragment())
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
+        toolbar.navigationIcon = getDrawable(R.drawable.ic_menu_white_24dp)
+        val listFragment = arrayListOf(
+            HomeFragment.newInstance(),
+            StatisticsFragment.newInstance(),
+            ProfileFragment.newInstance()
+            )
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, HomeFragment.newInstance())
+            .commitNow()
 
         val profile = ProfileDrawerItem().apply {
             name = StringHolder("Muhamad Alfi")
@@ -110,15 +113,19 @@ class HomeActivity : AppCompatActivity() {
             )
             selectedItemPosition = 0
             onDrawerItemClickListener = { _, _, position->
-                supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, listFragment[position-1]).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, listFragment[position-1])
+                    .commit()
+               drawer_layout.closeDrawer(GravityCompat.START)
                 false
+
             }
 
         }
 
         crossFadeSmallView.drawer = crossFadeLargeView
         drawer_layout.maxWidthPx = getOptimalDrawerWidth(this)
-        crossFadeSmallView.background = crossFadeLargeView.background
+        crossFadeSmallView.background = getDrawable(R.drawable.background)
 
         crossFadeSmallView.crossFader = object : ICrossfader {
 
@@ -169,8 +176,4 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
 }

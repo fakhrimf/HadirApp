@@ -42,7 +42,7 @@ class LoginFragment : BaseFragment() {
         super.onStart()
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
-            startActivity<MainActivity>(requireContext())
+            startActivity<HomeActivity>(requireContext())
             (activity as LoginActivity).finish()
         }
     }
@@ -118,7 +118,7 @@ class LoginFragment : BaseFragment() {
             vm.firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful && !clicked) {
                     val user = vm.firebaseAuth.currentUser
-                    startActivity(MainActivity.getLaunchIntent(requireContext()))
+                    startActivity(HomeActivity.getLaunchIntent(requireContext()))
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(requireContext(), "Error Login, try again later ", Toast.LENGTH_LONG).show()
@@ -135,7 +135,7 @@ class LoginFragment : BaseFragment() {
 
         vm.firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                startActivity(MainActivity.getLaunchIntent(requireContext()))
+                startActivity(HomeActivity.getLaunchIntent(requireContext()))
             } else {
                 Toast.makeText(requireContext(), "Google Sign In Failed", Toast.LENGTH_SHORT).show()
             }
