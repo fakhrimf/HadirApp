@@ -2,11 +2,14 @@ package com.hadir.hadirapp.ui.base
 
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
+import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.TeacherModel
+import com.hadir.hadirapp.utils.IMAGE_TYPE
 import com.hadir.hadirapp.utils.SharedPreferenceUtils
 import com.hadir.hadirapp.utils.TeacherRepository
 import com.hadir.hadirapp.utils.source.ApiClient
@@ -45,6 +48,14 @@ open class BaseAndroidViewModel(application: Application) : AndroidViewModel(app
         return liveData
     }
 
+    fun getImageIntent(): Intent {
+        val intent = Intent()
+        intent.apply {
+            type = IMAGE_TYPE
+            action = Intent.ACTION_GET_CONTENT
+        }
+        return Intent.createChooser(intent, context.getString(R.string.select_image))
+    }
     fun makeText(text: String) = Toast.makeText(context, text, Toast.LENGTH_LONG).show()
     fun getTeachersData() = repo.getTeachersData()
     fun getDailyData(owner: LifecycleOwner, date: Date) = repo.getDailyData(owner, date)
