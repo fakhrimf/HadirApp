@@ -1,40 +1,39 @@
 package com.hadir.hadirapp
 
-import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.annotation.DrawableRes
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.ui.home.HomeFragment
+import com.hadir.hadirapp.ui.home.HomeViewModel
 import com.hadir.hadirapp.ui.profile.ProfileFragment
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
+import com.hadir.hadirapp.utils.SharedPreferenceUtils
 import com.mikepenz.materialdrawer.widget.AccountHeaderView
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
-import com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
 import com.mikepenz.materialdrawer.holder.ImageHolder
 import com.mikepenz.materialdrawer.interfaces.ICrossfader
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.*
 import com.mikepenz.materialdrawer.util.getOptimalDrawerWidth
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.app_bar_home.*
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var headerView: AccountHeaderView
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private val sharedPreferenceUtils: SharedPreferenceUtils = SharedPreferenceUtils.newInstance(this)
 
 
     companion object {
@@ -47,11 +46,16 @@ class HomeActivity : AppCompatActivity() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        val username = sharedPreferenceUtils.getUsername();
+
+
+
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
         toolbar.navigationIcon = getDrawable(R.drawable.ic_menu_white_24dp)
         val listFragment = arrayListOf(
@@ -66,7 +70,7 @@ class HomeActivity : AppCompatActivity() {
 
         val profile = ProfileDrawerItem().apply {
             name = StringHolder("Muhamad Alfi")
-            description = StringHolder("alfi@gmail.com")
+            description = StringHolder(username)
             icon = ImageHolder(R.drawable.profile)
         }
 
