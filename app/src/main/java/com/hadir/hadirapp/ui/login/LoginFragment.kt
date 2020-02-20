@@ -38,6 +38,7 @@ class LoginFragment : BaseFragment() {
                 val intent = Intent(requireContext(), HomeActivity::class.java)
                 if (it) {
                     startActivity(intent)
+                    requireActivity().finish()
                 } else if (!it) {
                     tv_header.text = getString(R.string.session_expired)
                     circularProgress.visibility = View.INVISIBLE
