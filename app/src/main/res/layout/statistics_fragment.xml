@@ -13,7 +13,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/text_statistic"
         android:textColor="#ffff"
-        android:textSize="@dimen/_30sdp"
+        android:textSize="@dimen/_26sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,6 @@
         app:cpb_background_progressbar_width="@dimen/_15sdp"
         app:cpb_progress="56"
         app:cpb_progress_max="100"
-        app:cpb_progressbar_color="@color/progressBarGreen"
         app:cpb_progressbar_width="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +103,7 @@
                         android:text="@string/kehadiran_statistic"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_kehadiran"/>
 
                     <TextView
@@ -114,7 +113,7 @@
                         android:text="@string/kehadiran_statistic_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -138,7 +137,7 @@
                         android:text="@string/kehadiran_izin"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_izin"/>
 
                     <TextView
@@ -148,7 +147,7 @@
                         android:text="@string/kehadiran_izin_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -172,7 +171,7 @@
                         android:text="@string/kehadiran_sakit"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_sakit"/>
 
                     <TextView
@@ -182,7 +181,7 @@
                         android:text="@string/kehadiran_sakit_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
             </LinearLayout>

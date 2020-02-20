@@ -24,11 +24,11 @@ class StatisticsFragment : Fragment() {
         ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(StatisticsViewModel::class.java)
     }
 
-    private val NumKehInMonth = 14
-    private val NumKehInWeek = 4
-    private val NumIz = 0
-    private val NumSak = 0
-    private val curDate = LocalDate.now()
+    private var numKehInMonth = 14
+    private var numKehInWeek = 4
+    private var numIz = 0
+    private var numSak = 0
+    private var curDate = LocalDate.now()
 
     companion object {
         fun newInstance() = StatisticsFragment()
@@ -36,7 +36,7 @@ class StatisticsFragment : Fragment() {
 
     fun countPercent() {
         val spin_items = arrayOf("Per Week", "Per Month")
-        var arAdpt = ArrayAdapter(requireActivity(), R.layout.spin_items, spin_items)
+        val arAdpt = ArrayAdapter(requireActivity(), R.layout.spin_items, spin_items)
         arAdpt.setDropDownViewResource(R.layout.spin_dropdown)
         spin_stat.adapter = arAdpt
 
@@ -44,22 +44,26 @@ class StatisticsFragment : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0?.getItemAtPosition(p2).toString()
                 if (selectedItem == "Per Week"){
-                    var totalWorkWeek = TeacherRepository().getWorkDayPerWeek(curDate)
-                    var percentage = (NumKehInWeek/totalWorkWeek) * 100
+                    val totalWorkWeek = TeacherRepository().getWorkDayPerWeek(curDate)
+                    val percentage = (numKehInWeek.toDouble() / totalWorkWeek) * 100
                     circularProgress.apply {
                         setProgressWithAnimation(percentage.toFloat(), 2000)
                     }
-                    tvPersentage.setText(percentage.toString())
+                    tvPersentage.setText(percentage.toInt().toString()+"%")
                     text_statistic.setText("Statistics This Week")
+//                    text_statistic.setText(totalWorkWeek.toString())
+                    angka_kehadiran.setText(numKehInWeek.toString())
                 }
                 if (selectedItem == "Per Month") {
-                    var totalWorkMonth = TeacherRepository().getWorkDayPerMonth(curDate)
-                    var percentage = (NumKehInMonth/totalWorkMonth) * 100
+                    val totalWorkMonth = TeacherRepository().getWorkDayPerMonth(curDate)
+                    val percentage = (numKehInMonth.toDouble() / totalWorkMonth) * 100
                     circularProgress.apply {
                         setProgressWithAnimation(percentage.toFloat(), 2000)
                     }
-                    tvPersentage.setText(percentage.toString())
+                    tvPersentage.setText(percentage.toInt().toString()+"%")
                     text_statistic.setText("Statistics This Month")
+//                    text_statistic.setText(totalWorkMonth.toString())
+                    angka_kehadiran.setText(numKehInMonth.toString())
 
                 }else{}
             }
@@ -67,8 +71,8 @@ class StatisticsFragment : Fragment() {
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
-        angka_kehadiran.setText(NumSak.toString())
-        angka_izin.setText(NumIz.toString())
+        angka_sakit.setText(numSak.toString())
+        angka_izin.setText(numIz.toString())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
