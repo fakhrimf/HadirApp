@@ -98,6 +98,7 @@ class HomeActivity : AppCompatActivity() {
         headerView = AccountHeaderView(this).apply {
             attachToSliderView(crossFadeLargeView)
             headerBackground = ImageHolder(R.drawable.background)
+            dividerBelowHeader = false
             addProfiles(
                 profile
             )
