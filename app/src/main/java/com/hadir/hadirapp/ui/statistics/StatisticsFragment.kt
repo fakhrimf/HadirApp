@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.R
 import com.hadir.hadirapp.model.DailyDataModel
 import com.hadir.hadirapp.model.TeacherModel
+import com.hadir.hadirapp.ui.base.BaseAndroidViewModel
 import com.hadir.hadirapp.utils.TeacherRepository
 import kotlinx.android.synthetic.main.statistics_fragment.*
 import org.joda.time.LocalDate
@@ -24,11 +26,12 @@ class StatisticsFragment : Fragment() {
         ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(StatisticsViewModel::class.java)
     }
 
-    private var numKehInMonth = 14
-    private var numKehInWeek = 4
+    private var curDate = LocalDate.now()
+    private var curOwner = vm.getCurrentUser(viewLifecycleOwner)
+    private var numKehInMonth = 0
+    private var numKehInWeek = 0
     private var numIz = 0
     private var numSak = 0
-    private var curDate = LocalDate.now()
 
     companion object {
         fun newInstance() = StatisticsFragment()
@@ -81,6 +84,11 @@ class StatisticsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        curOwner.observe(viewLifecycleOwner, Observer {
+            vm.getPresentInfoPerMonth(viewLifecycleOwner, LocalDate(), "${it.rfid_key}").observe(viewLifecycleOwner, Observer {info ->
+                numKehInMonth = info
+            })
+        })
         Log.d("TEACHER_LIST", "onActivityCreated: activity created.")
         vm.getTeachersData().observe(viewLifecycleOwner, Observer<ArrayList<TeacherModel>> {
             Log.d("TEACHER_LIST", "onActivityCreated: $it")
