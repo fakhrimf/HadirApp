@@ -13,7 +13,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/text_statistic"
         android:textColor="#ffff"
-        android:textSize="@dimen/_30ssp"
+        android:textSize="@dimen/_26sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,16 +21,19 @@
     <!--CircularProgressbar tinggal di set-->
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
-        app:cpb_progress_max="100"
         android:id="@+id/circularProgress"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
-        app:cpb_background_progressbar_color="@color/progressBarGreen"
+        app:cpb_progressbar_color="@color/progressBarGreen"
+        android:layout_marginTop="@dimen/_16sdp"
         app:cpb_background_progressbar_width="@dimen/_15sdp"
+        app:cpb_progress="56"
+        app:cpb_progress_max="100"
+        app:cpb_progressbar_width="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_statistic"
-        android:layout_marginTop="@dimen/_16sdp"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_statistic"/>
+
 
     <TextView
         android:id="@+id/tvPersentage"
@@ -45,11 +48,22 @@
         app:layout_constraintRight_toRightOf="@id/circularProgress"
         app:layout_constraintBottom_toBottomOf="@id/circularProgress"/>
 
+    <Spinner android:id="@+id/spin_stat"
+        android:background="#ff424242"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circularProgress"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/circularProgress">
+        app:layout_constraintTop_toBottomOf="@id/spin_stat">
 
 
         <androidx.cardview.widget.CardView
@@ -57,7 +71,7 @@
             android:layout_width="@dimen/_220sdp"
             android:layout_height="@dimen/dimens_160dp"
             android:layout_marginStart="-20dp"
-            android:layout_marginTop="@dimen/_79sdp"
+            android:layout_marginTop="@dimen/_25sdp"
             app:cardBackgroundColor="#FF424242"
             app:cardCornerRadius="@dimen/_16sdp"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +103,7 @@
                         android:text="@string/kehadiran_statistic"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_kehadiran"/>
 
                     <TextView
@@ -99,7 +113,7 @@
                         android:text="@string/kehadiran_statistic_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -123,7 +137,7 @@
                         android:text="@string/kehadiran_izin"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_izin"/>
 
                     <TextView
@@ -133,7 +147,7 @@
                         android:text="@string/kehadiran_izin_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -157,7 +171,7 @@
                         android:text="@string/kehadiran_sakit"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_toEndOf="@id/icon_sakit"/>
 
                     <TextView
@@ -167,7 +181,7 @@
                         android:text="@string/kehadiran_sakit_angka"
                         android:textColor="@color/progressBarGreen"
                         android:fontFamily="@font/poppins_regular"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_12sdp"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
             </LinearLayout>

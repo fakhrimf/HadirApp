@@ -34,6 +34,7 @@ class GetApiViewModel(application: Application): BaseAndroidViewModel(applicatio
                     teacherModel.value = model
                     noResponse.value = false
                 } else {
+                    teacherModel.value = null
                     noResponse.value = true
                 }
             }

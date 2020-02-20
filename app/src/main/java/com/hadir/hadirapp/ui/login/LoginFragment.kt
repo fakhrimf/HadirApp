@@ -58,7 +58,7 @@ class LoginFragment : BaseFragment() {
             makeText(getString(R.string.auto_login))
             val isRight = vm.login(email.text.toString(), passwordField.text.toString(), viewLifecycleOwner)
             isRight.observe(viewLifecycleOwner, Observer {
-                val intent = Intent(requireContext(), HomeActivity::class.java)
+                val intent = Intent(requireContext(), StatisticsActivity::class.java)
                 if (it) {
                     startActivity(intent)
                 } else if (!it) {
@@ -74,7 +74,7 @@ class LoginFragment : BaseFragment() {
                 makeText(getString(R.string.logging_in))
                 val isRight = vm.login(email.text.toString(), passwordField.text.toString(), viewLifecycleOwner)
                 isRight.observe(viewLifecycleOwner, Observer {
-                    val intent = Intent(requireContext(), HomeActivity::class.java)
+                    val intent = Intent(requireContext(), StatisticsActivity::class.java)
                     if (it) {
                         startActivity(intent)
                     } else if (!it) {

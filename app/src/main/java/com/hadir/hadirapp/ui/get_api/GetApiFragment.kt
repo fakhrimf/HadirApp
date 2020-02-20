@@ -35,6 +35,8 @@ class GetApiFragment : BaseFragment() {
                             circularProgress.visibility = View.INVISIBLE
                             val intent = Intent(requireContext(), RegisterActivity::class.java)
                             intent.putExtra(MODEL_KEY, it)
+                            startActivity(intent)
+                            requireActivity().finish()
                         } else {
                             circularProgress.visibility = View.INVISIBLE
                             tv_header.text = getString(R.string.no_grnrs_found)
