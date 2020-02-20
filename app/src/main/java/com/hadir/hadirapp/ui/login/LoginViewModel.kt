@@ -31,15 +31,15 @@ class LoginViewModel(application: Application) : BaseAndroidViewModel(applicatio
     fun login(username: String, password: String, owner: LifecycleOwner) : MutableLiveData<Boolean> {
         val liveData = MutableLiveData<Boolean>()
         getTeachersData().observe(owner, Observer {
+            var isRight = false
             for(i in it) {
                 if(i.username == username && i.password == password) {
                     sharedPreferenceUtils.setUsername(username)
                     sharedPreferenceUtils.setPassword(password)
-                    liveData.value = true
-                } else {
-                    liveData.value = false
+                    isRight = true
                 }
             }
+            liveData.value = isRight
         })
         return liveData
     }
