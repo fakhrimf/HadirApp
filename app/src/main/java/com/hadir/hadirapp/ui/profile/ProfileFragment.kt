@@ -14,6 +14,10 @@ import com.hadir.hadirapp.R
  */
 class ProfileFragment : Fragment() {
 
+    companion object {
+        fun newInstance() = ProfileFragment()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
