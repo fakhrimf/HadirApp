@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.GetApiActivity
+import com.hadir.hadirapp.HomeActivity
 import com.hadir.hadirapp.R
-import com.hadir.hadirapp.StatisticsActivity
 import com.hadir.hadirapp.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 
