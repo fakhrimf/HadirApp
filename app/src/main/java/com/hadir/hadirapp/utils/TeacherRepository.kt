@@ -451,6 +451,11 @@ class TeacherRepository {
         return i
     }
 
+    fun addTeacher(teacher: TeacherModel) {
+        val database = FirebaseDatabase.getInstance().reference
+
+    }
+
     companion object {
         fun newInstance() = TeacherRepository()
     }

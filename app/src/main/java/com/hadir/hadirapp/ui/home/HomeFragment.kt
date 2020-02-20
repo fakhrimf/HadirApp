@@ -18,7 +18,13 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import org.joda.time.LocalDate
 
 class HomeFragment : Fragment(), HomeActionListener {
-    private val vm = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(HomeViewModel::class.java)
+    private val vm by lazy {
+        ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(HomeViewModel::class.java)
+    }
+
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

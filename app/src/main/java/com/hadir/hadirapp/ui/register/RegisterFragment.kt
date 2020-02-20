@@ -19,7 +19,7 @@ class RegisterFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val model = arguments!!.get(MODEL_KEY) as TeacherModel
-        tv_header.text = getString(R.string.create_an_account) + " for ${model.name!!.split(" ")[1]}"
+        val model = arguments?.get(MODEL_KEY) as TeacherModel?
+        if (model != null) tv_header.text = getString(R.string.create_an_account) + " for ${model.name!!.split(" ")[1]}"
     }
 }

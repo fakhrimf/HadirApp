@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         fragment.arguments = bundle
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, fragment)
+                    .add(R.id.fragmentRegister, fragment)
                     .commitNow()
         }
     }
