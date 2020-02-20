@@ -22,7 +22,7 @@
            <androidx.constraintlayout.widget.ConstraintLayout
                android:id="@+id/card_container"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="@dimen/_220sdp"
                android:layout_marginTop="@dimen/_26sdp"
                android:paddingVertical="@dimen/_20sdp"
                app:layout_constraintHorizontal_bias="1.0"
@@ -33,12 +33,12 @@
                <androidx.cardview.widget.CardView
                    android:id="@+id/card_profile"
                    android:layout_width="match_parent"
-                   android:layout_height="@dimen/_145sdp"
+                   android:layout_height="match_parent"
                    android:layout_marginHorizontal="@dimen/_30sdp"
                    android:layout_marginTop="@dimen/_37sdp"
                    android:backgroundTint="@color/cardDark"
                    app:cardCornerRadius="@dimen/_12sdp"
-                   app:cardElevation="@dimen/_6sdp"
+                   app:cardElevation="@dimen/_20sdp"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
                    app:layout_constraintTop_toTopOf="parent">
@@ -117,7 +117,7 @@
                    android:layout_width="@dimen/_87sdp"
                    android:layout_height="@dimen/_87sdp"
                    android:layout_centerHorizontal="true"
-                   android:elevation="@dimen/_8sdp"
+                   android:elevation="@dimen/_25sdp"
                    android:src="@drawable/default_profile"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
