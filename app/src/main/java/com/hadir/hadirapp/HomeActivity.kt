@@ -52,8 +52,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        val username = sharedPreferenceUtils.getUsername();
-
+        val username = sharedPreferenceUtils.getUsername()
 
 
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
@@ -69,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
             .commitNow()
 
         val profile = ProfileDrawerItem().apply {
-            name = StringHolder("Muhamad Alfi")
+            name = StringHolder(username)
             description = StringHolder(username)
             icon = ImageHolder(R.drawable.profile)
         }

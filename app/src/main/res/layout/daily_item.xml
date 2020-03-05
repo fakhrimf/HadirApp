@@ -40,12 +40,17 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_black"
                     android:text="@{model.teacherModel.name}"
                     android:textColor="@color/mainWhite"
-                    android:textSize="@dimen/_15ssp"
+                    android:layout_marginHorizontal="@dimen/_38sdp"
+                    android:textAlignment="center"
+                    tools:text="AJIMAT EDISON PRAKASA S.SOS"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/_12ssp"
+                    android:maxLines="2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +73,8 @@
         </androidx.cardview.widget.CardView>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:elevation="@dimen/_10sdp"

@@ -16,6 +16,7 @@ import com.hadir.hadirapp.ui.home.adapter.DailyAdapter
 import com.hadir.hadirapp.ui.home.listener.HomeActionListener
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.joda.time.LocalDate
+import java.util.*
 
 class HomeFragment : Fragment(), HomeActionListener {
     private val vm by lazy {
@@ -49,7 +50,7 @@ class HomeFragment : Fragment(), HomeActionListener {
     private fun setRecycler() {
         vm.getCurrentUser(viewLifecycleOwner).observe(viewLifecycleOwner, Observer { teacher ->
             tv_name.text = teacher.name
-            vm.getPresentDataPerYear(viewLifecycleOwner, LocalDate()).observe(viewLifecycleOwner, Observer {
+            vm.getDailyData(viewLifecycleOwner, Date()).observe(viewLifecycleOwner, Observer {
                 val dailyAdapter = DailyAdapter(it, this)
                 Log.d("%%%%", "$it")
                 swipeRefreshHome.isRefreshing = false
