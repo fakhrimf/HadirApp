@@ -2,6 +2,7 @@ package com.hadir.hadirapp
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import com.hadir.hadirapp.ui.home.HomeFragment
+import com.hadir.hadirapp.ui.home.HomeViewModel
 import com.hadir.hadirapp.ui.profile.ProfileFragment
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
 import com.mikepenz.materialdrawer.holder.ColorHolder
@@ -30,6 +32,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var headerView: AccountHeaderView
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private val sharedPreferenceUtils: SharedPreferenceUtils = SharedPreferenceUtils.newInstance(this)
 
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, HomeActivity::class.java).apply {
@@ -42,6 +45,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        val username = sharedPreferenceUtils.getUsername()
+
+
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
         toolbar.navigationIcon = getDrawable(R.drawable.ic_menu_white_24dp)
 //        toolbar.logo = getDrawable(R.drawable.logo_app_white) //Harus di resize
@@ -56,8 +62,8 @@ class HomeActivity : AppCompatActivity() {
                 .commitNow()
 
         val profile = ProfileDrawerItem().apply {
-            name = StringHolder("Muhamad Alfi")
-            description = StringHolder("alfi@gmail.com")
+            name = StringHolder(username)
+            description = StringHolder(username)
             icon = ImageHolder(R.drawable.profile)
         }
 
