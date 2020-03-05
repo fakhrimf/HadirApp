@@ -14,6 +14,7 @@ import com.hadir.hadirapp.ui.home.HomeFragment
 import com.hadir.hadirapp.ui.home.HomeViewModel
 import com.hadir.hadirapp.ui.profile.ProfileFragment
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
+import com.hadir.hadirapp.utils.SharedPreferenceUtils
 import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.holder.ImageHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
