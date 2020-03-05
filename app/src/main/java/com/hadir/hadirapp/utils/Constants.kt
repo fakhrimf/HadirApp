@@ -12,3 +12,7 @@ const val MODEL_KEY = "model_key"
 const val IMAGE_REQUEST_CODE = 420
 const val IMAGE_TYPE = "image/*"
 const val TEACHER_STORAGE_REFERENCE = "teacher_images"
+
+enum class Status {
+    TRUE,FALSE,TIMEOUT,ERROR
+}

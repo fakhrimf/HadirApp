@@ -94,4 +94,6 @@
     <string name="password_empty">Password cannot be empty</string>
     <string name="dp_empty">Please insert display picture</string>
     <string name="remember_me">Remember Me</string>
+    <string name="timed_out">Connection Timed Out</string>
+    <string name="internal_error">Internal Server Error, try again later</string>
 </resources>

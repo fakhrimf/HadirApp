@@ -11,6 +11,8 @@ import com.hadir.hadirapp.R
 import com.hadir.hadirapp.RegisterActivity
 import com.hadir.hadirapp.ui.base.BaseFragment
 import com.hadir.hadirapp.utils.MODEL_KEY
+import com.hadir.hadirapp.utils.Status
+import com.hadir.hadirapp.utils.Status.*
 import kotlinx.android.synthetic.main.fragment_get_api_data.*
 
 class GetApiFragment : BaseFragment() {
@@ -30,16 +32,27 @@ class GetApiFragment : BaseFragment() {
                 vm.getData(grnrsField.text.toString())
                 vm.teacherModel.observe(viewLifecycleOwner, Observer {
                     vm.noResponse.observe(viewLifecycleOwner, Observer { noResponse ->
-                        if(!noResponse) {
-                            makeText(it.name)
-                            circularProgress.visibility = View.INVISIBLE
-                            val intent = Intent(requireContext(), RegisterActivity::class.java)
-                            intent.putExtra(MODEL_KEY, it)
-                            startActivity(intent)
-                            requireActivity().finish()
-                        } else {
-                            circularProgress.visibility = View.INVISIBLE
-                            tv_header.text = getString(R.string.no_grnrs_found)
+                        when (noResponse) {
+                            FALSE -> {
+                                makeText(it.name)
+                                circularProgress.visibility = View.INVISIBLE
+                                val intent = Intent(requireContext(), RegisterActivity::class.java)
+                                intent.putExtra(MODEL_KEY, it)
+                                startActivity(intent)
+                                requireActivity().finish()
+                            }
+                            TRUE -> {
+                                circularProgress.visibility = View.INVISIBLE
+                                tv_header.text = getString(R.string.no_grnrs_found)
+                            }
+                            TIMEOUT -> {
+                                circularProgress.visibility = View.INVISIBLE
+                                tv_header.text = getString(R.string.timed_out)
+                            }
+                            else -> {
+                                circularProgress.visibility = View.INVISIBLE
+                                tv_header.text = getString(R.string.internal_error)
+                            }
                         }
                     })
                 })
