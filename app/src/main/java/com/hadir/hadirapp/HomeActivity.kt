@@ -113,7 +113,20 @@ class HomeActivity : AppCompatActivity() {
                 item1,item2,item3
             )
             addStickyDrawerItems(
-                SecondaryDrawerItem().withName(R.string.drawer_logout).withIcon(R.drawable.drawer_logout).withIdentifier(4)
+                 SecondaryDrawerItem().apply {
+                    name = StringHolder("Logout")
+                    identifier = 4
+                    onDrawerItemClickListener = { _, _, _->
+                        sharedPreferenceUtils.setUsername("")
+                        sharedPreferenceUtils.setPassword("")
+                        sharedPreferenceUtils.setRememberMe(false)
+                        intent = Intent(context,LoginActivity::class.java)
+                        startActivity(intent)
+                        false
+
+                    }
+                }
+
             )
             selectedItemPosition = 0
             onDrawerItemClickListener = { _, _, position->
