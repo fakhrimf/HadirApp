@@ -10,23 +10,23 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.hadir.hadirapp.ui.home.HomeFragment
 import com.hadir.hadirapp.ui.home.HomeViewModel
 import com.hadir.hadirapp.ui.profile.ProfileFragment
 import com.hadir.hadirapp.ui.statistics.StatisticsFragment
 import com.hadir.hadirapp.utils.SharedPreferenceUtils
-import com.mikepenz.materialdrawer.widget.AccountHeaderView
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.holder.ColorHolder
-import com.mikepenz.materialdrawer.holder.StringHolder
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.holder.ImageHolder
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.interfaces.ICrossfader
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
-import com.mikepenz.materialdrawer.model.interfaces.*
+import com.mikepenz.materialdrawer.model.interfaces.withIcon
+import com.mikepenz.materialdrawer.model.interfaces.withIdentifier
+import com.mikepenz.materialdrawer.model.interfaces.withName
 import com.mikepenz.materialdrawer.util.getOptimalDrawerWidth
+import com.mikepenz.materialdrawer.widget.AccountHeaderView
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -35,17 +35,11 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private val sharedPreferenceUtils: SharedPreferenceUtils = SharedPreferenceUtils.newInstance(this)
 
-
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, HomeActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         }
     }
-
-
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,15 +51,16 @@ class HomeActivity : AppCompatActivity() {
 
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, com.mikepenz.materialdrawer.R.string.material_drawer_open, com.mikepenz.materialdrawer.R.string.material_drawer_close)
         toolbar.navigationIcon = getDrawable(R.drawable.ic_menu_white_24dp)
+//        toolbar.logo = getDrawable(R.drawable.logo_app_white) //Harus di resize
         val listFragment = arrayListOf(
             HomeFragment.newInstance(),
             StatisticsFragment.newInstance(),
             ProfileFragment.newInstance()
-            )
+        )
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, HomeFragment.newInstance())
-            .commitNow()
+                .replace(R.id.container, HomeFragment.newInstance())
+                .commitNow()
 
         val profile = ProfileDrawerItem().apply {
             name = StringHolder(username)
@@ -81,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
             icon = ImageHolder(R.drawable.ico_home_30px)
         }
 
-        val item2= PrimaryDrawerItem()
+        val item2 = PrimaryDrawerItem()
         item2.run {
             identifier = 2
             name = StringHolder(R.string.text_statistik)
@@ -110,7 +105,7 @@ class HomeActivity : AppCompatActivity() {
 
         crossFadeLargeView.apply {
             itemAdapter.add(
-                item1,item2,item3
+                item1, item2, item3
             )
             addStickyDrawerItems(
                  SecondaryDrawerItem().apply {
@@ -129,11 +124,11 @@ class HomeActivity : AppCompatActivity() {
 
             )
             selectedItemPosition = 0
-            onDrawerItemClickListener = { _, _, position->
+            onDrawerItemClickListener = { _, _, position ->
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, listFragment[position-1])
-                    .commit()
-               drawer_layout.closeDrawer(GravityCompat.START)
+                        .replace(R.id.container, listFragment[position - 1])
+                        .commit()
+                drawer_layout.closeDrawer(GravityCompat.START)
                 false
 
             }
